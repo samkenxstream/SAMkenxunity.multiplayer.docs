@@ -464,8 +464,7 @@ module.exports = {
                 "type": "category",
                 "label": "Community Contributions",
                 "items": [
-                  {
-                
+                      {
                         "collapsed": true,
                         "type": "category",
                         "label": "Dilmer Tutorials",
@@ -489,11 +488,10 @@ module.exports = {
                           {
                             "type": "doc",
                             "id": "learn/dilmer/relay-service-setup"
-                          }
-                        ]
+                          },
+                        ],
                       },
                       {
-                
                         "collapsed": true,
                         "type": "category",
                         "label": "Dapper Tutorials",
@@ -506,15 +504,13 @@ module.exports = {
                             "type": "doc",
                             "id": "learn/dapper/dapper-upgrade"
                           },
-                        
-                        ]
-                      }
-                    ]
+                        ],
+                      },
+                    ],
                   },
                 ],
               },
-            ],
-          },
+
   {
     "collapsed": true,
     "type": "category",
@@ -547,13 +543,15 @@ module.exports = {
             {
               "type": "doc",
               "id": "learn/bitesize-invaders"
-              },
+            },
             {
             "type": "doc",
             "id": "learn/bitesize-spaceshooter"
-            }
-        ]
+            },
+          ],
         },
+      ],
+    },
   {
     "type": "doc",
       "id": "learn/faq"
