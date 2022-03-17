@@ -116,12 +116,14 @@ module.exports = {
             dropdownActiveClassDisabled: true,
             docsPluginId: 'transport'
           },
+/*
           {
             to: '/learn/introduction',
             label: 'Unity Multiplayer Resources',
             className: 'nav-break',
             position: 'left',
           },
+*/
           {
             className: 'navbar-github-link',
             position: 'right',
