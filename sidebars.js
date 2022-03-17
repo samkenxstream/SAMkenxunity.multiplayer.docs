@@ -11,6 +11,85 @@ module.exports = {
       "id": "getting-started/about"
     },
     {
+      "collapsed": true,
+      "type": "category",
+      "label": "Multiplayer Gaming Overview",
+      "items": [
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Multiplayer Networking Concepts",
+          "items": [
+            {
+              "type": "doc",
+              "id": "reference/glossary/high-level-terminology"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/dedicated-server"
+            },
+            {
+              "collapsed": true,
+              "type": "category",
+              "label": "Lag",
+              "items": [
+                  {
+                    "type": "doc",
+                    "id": "reference/glossary/ticks-and-update-rates"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "learn/lagandpacketloss"
+                      },
+                  {
+                    "type": "doc",
+                    "id": "learn/clientside_interpolation"
+                      },
+                  {
+                    "type": "doc",
+                    "id": "learn/dealing-with-latency"
+                  },
+              ],
+            },
+  
+            {
+              "type": "doc",
+              "id": "reference/glossary/network-terms"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/prioritization"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/relevancy"
+            },
+          ],
+  
+        },
+        {
+          "collapsed": true,
+          "type": "category",
+          "label": "Multiplayer Game Architecture",
+          "items": [
+            {
+              "type": "doc",
+              "id": "learn/multiplayer-game-arhitecture"
+            },
+            {
+              "type": "doc",
+              "id": "reference/glossary/network-topologies"
+            },
+  
+            {
+              "type": "doc",
+              "id": "learn/listen-server-host-architecture"
+            }
+          ]
+        },
+      ],
+    },  
+    {
     "collapsed": true,
     "type": "category",
     "label": "Installation and Migration",
@@ -379,196 +458,107 @@ module.exports = {
                     "id": "tutorials/goldenpath_series/goldenpath_two"
                   },
                 ],
-
-              },
-
-            ]
-  },
-],
-
-  Multiplayer :
-  [
-    {
-      "type": "doc",
-      "id": "learn/introduction",
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Reference Material",
-      "items": [
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Multiplayer Networking Concepts",
-          "items": [
-            {
-              "type": "doc",
-              "id": "reference/glossary/high-level-terminology"
-            },
-            {
-              "collapsed": true,
-              "type": "category",
-              "label": "Lag",
-              "items": [
-                  {
-                    "type": "doc",
-                    "id": "reference/glossary/ticks-and-update-rates"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "learn/lagandpacketloss"
-                      },
-                  {
-                    "type": "doc",
-                    "id": "learn/clientside_interpolation"
-                      },
-                  {
-                    "type": "doc",
-                    "id": "learn/dealing-with-latency"
-                  },
-              ],
-            },
-
-            {
-              "type": "doc",
-              "id": "reference/glossary/network-terms"
-            },
-            {
-              "type": "doc",
-              "id": "reference/glossary/prioritization"
-            },
-            {
-              "type": "doc",
-              "id": "reference/glossary/relevancy"
-            },
-          ],
-
-        },
-        {
-          "collapsed": true,
-          "type": "category",
-          "label": "Multiplayer Game Architecture",
-          "items": [
-            {
-              "type": "doc",
-              "id": "learn/multiplayer-game-arhitecture"
-            },
-            {
-              "type": "doc",
-              "id": "reference/glossary/network-topologies"
-            },
-
-            {
-              "type": "doc",
-              "id": "learn/listen-server-host-architecture"
-            }
-          ]
-        },
-
-
-      ],
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Educational Material",
-      "items": [
-          {
-            "collapsed": true,
-            "type": "category",
-            "label": "Boss Room",
-            "items": [
-              {
-                "type": "doc",
-                "id": "learn/bossroom"
               },
               {
-              "type": "doc",
-              "id": "learn/bossroom-examples/bossroom-actions"
+                "collapsed": true,
+                "type": "category",
+                "label": "Community Contributions",
+                "items": [
+                  {
+                
+                        "collapsed": true,
+                        "type": "category",
+                        "label": "Dilmer Tutorials",
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "learn/dilmer/dilmer-video"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "learn/dilmer/project-setup"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "learn/dilmer/corefeatures"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "learn/dilmer/networkanimator"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "learn/dilmer/relay-service-setup"
+                          }
+                        ]
+                      },
+                      {
+                
+                        "collapsed": true,
+                        "type": "category",
+                        "label": "Dapper Tutorials",
+                        "items": [
+                          {
+                            "type": "doc",
+                            "id": "learn/dapper/dapper-video"
+                          },
+                          {
+                            "type": "doc",
+                            "id": "learn/dapper/dapper-upgrade"
+                          },
+                        
+                        ]
+                      }
+                    ]
+                  },
+                ],
               },
             ],
           },
-          {
+  {
+    "collapsed": true,
+    "type": "category",
+    "label": "Samples",
+    "items": [
+        {
           "collapsed": true,
           "type": "category",
-          "label": "Bitesize Samples",
+          "label": "Boss Room",
           "items": [
-              {
+            {
               "type": "doc",
-              "id": "learn/bitesize-introduction"
-              },
-              {
-                "type": "doc",
-                "id": "learn/bitesize-invaders"
-                },
-              {
-              "type": "doc",
-              "id": "learn/bitesize-spaceshooter"
-              }
-          ]
-          },
-    ],
-    },
-    {
-      "collapsed": true,
-      "type": "category",
-      "label": "Community Contributions",
-      "items": [
-        {
-      
-              "collapsed": true,
-              "type": "category",
-              "label": "Dilmer Tutorials",
-              "items": [
-                {
-                  "type": "doc",
-                  "id": "learn/dilmer/dilmer-video"
-                },
-                {
-                  "type": "doc",
-                  "id": "learn/dilmer/project-setup"
-                },
-                {
-                  "type": "doc",
-                  "id": "learn/dilmer/corefeatures"
-                },
-                {
-                  "type": "doc",
-                  "id": "learn/dilmer/networkanimator"
-                },
-                {
-                  "type": "doc",
-                  "id": "learn/dilmer/relay-service-setup"
-                }
-              ]
+              "id": "learn/bossroom"
             },
             {
-      
-              "collapsed": true,
-              "type": "category",
-              "label": "Dapper Tutorials",
-              "items": [
-                {
-                  "type": "doc",
-                  "id": "learn/dapper/dapper-video"
-                },
-                {
-                  "type": "doc",
-                  "id": "learn/dapper/dapper-upgrade"
-                },
-              
-              ]
-            }
-          ]
+            "type": "doc",
+            "id": "learn/bossroom-examples/bossroom-actions"
+            },
+          ],
         },
-  
-    {
-      "type": "doc",
-       "id": "learn/faq"
-    },
+        {
+        "collapsed": true,
+        "type": "category",
+        "label": "Bitesize Samples",
+        "items": [
+            {
+            "type": "doc",
+            "id": "learn/bitesize-introduction"
+            },
+            {
+              "type": "doc",
+              "id": "learn/bitesize-invaders"
+              },
+            {
+            "type": "doc",
+            "id": "learn/bitesize-spaceshooter"
+            }
+        ]
+        },
+  {
+    "type": "doc",
+      "id": "learn/faq"
+  },
   ],
-
 
   api :
   [

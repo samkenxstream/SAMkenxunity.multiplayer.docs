@@ -1,6 +1,6 @@
 ---
 id: about
-title: Getting Started with Netcode
+title: Netcode for GameObjects (Netcode)
 ---
 
 Netcode is a mid-level networking library built for the Unity game engine to abstract networking. This allows you, the developer to focus on your game rather than low-level protocols and networking frameworks.
