@@ -7,7 +7,7 @@ This guide is a simple recipe to upgrade from MLAPI 0.1.0 to Netcode for GameObj
 
 ## General overview of the upgrade process
 
-There are five main steps in the upgrade process.
+There are five main steps in the upgrade process. 
 1. Install the new package
 2. Changes in the naming
 3. Changes in the API
@@ -15,31 +15,28 @@ There are five main steps in the upgrade process.
 
 ## Installing the new package
 
-This step is the easiest one. First, uninstall the old MLAPI package. For that, go to your package manager (Windows -> Package Manager) and uninstall MLAPI. After that, still in the package manager, install the package: `com.unity.netcode.gameobjects`. You now have plenty of compilation errors since there are quite some changes between the two libraries.
-Installing the Netcode package will also install three other packages :
-- `Unity Transport` : the low-level transport layer recommended for Netcode
-- `Netcode adapter for UTP`: the Netcode adapter created by Unity for Unity Transport
-- `Burst`: a requirement for Unity Transport
+This step is the easiest one. First, uninstall the old MLAPI package. For that, go to your package manager (Windows -> Package Manager) and uninstall MLAPI. After that, still in the package manager, install the package: `com.unity.netcode.gameobjects`. You now have plenty of compilation errors since there are quite some changes between the two libraries. 
+Installing the Netcode package will also install some other packages such as [`Unity Transport`](https://docs.unity3d.com/Packages/com.unity.transport@latest/), [`Unity Collections`](https://docs.unity3d.com/Packages/com.unity.collections@latest/), [`Unity Burst`](https://docs.unity3d.com/Packages/com.unity.burst@latest/) etc.
 
 You must note that the `Burst` package requires an Editor restart. So restart your Unity after the installation. Unity will ask you to enter Fail Safe mode at the next boot, which is normal behaviour since all your network code is not compiling anymore.
 
-Unity also recommends installing the multiplayer tools package: `com.unity.multiplayer.tools`. This package will enable the Unity profiler to understand the NetCode library and add counters for network traffic.
+Unity also recommends installing the multiplayer tools package: [`com.unity.multiplayer.tools`](https://docs.unity3d.com/Packages/com.unity.multiplayer.tools@latest/). This package will enable the Unity profiler to understand the Netcode library and add counters for network traffic.
 
 ## Changes in the naming
 
-Unity renamed MLAPI into Netcode for GameObjects. This renaming has an impact on library and namespace naming. First, go to all your ASMDEF files referencing MLAPI and change the reference for `Unity.Netcode.Runtime`. Next, you can upgrade your using namespaces `using namespace MLAPI` to `using namespace Unity.NetCode`. Change this namespace in code to if you are not using `using` syntax.
+Unity renamed MLAPI into Netcode for GameObjects. This renaming has an impact on library and namespace naming. First, go to all your AsmDef files referencing MLAPI and change the reference for `Unity.Netcode.Runtime`. Next, you can upgrade your using namespaces `using MLAPI` to `using Unity.Netcode`. Change this namespace in code to if you are not using `using` syntax.
 
 ## Changes in the API
 
-Unity Multiplayer Teams tried to keep most of the MLAPI intact in Netcode. However, a successful compilation still requires some changes.
+Unity Multiplayer Team tried to keep most of the MLAPI intact in Netcode. However, a successful compilation still requires some changes.
 
 ### `NetworkVariable` changes
 
-`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members. If you already had custom `NetworkVariable`, read and write functions now uses our `FastBuffer` to read or write from and to the stream.
+`NetworkVariable` type is now generic only and the type specified in the generic needs to be a value type. First, change all your `NetworVariable*` types for their generic counterpart. For example, `NetworkVariableInt` becomes `NetworkVariable<int>`, NetworkVariableFloat becomes `NetworkVariable<float>` and so on. Now, some of your types (string, for example) will not match the new type requirements for `NetworkVariable<T>`. If your type is a string, you can use `FixedString32Bytes` instead. One should note that this type does not allow you to change the size of the string. For custom structs that only contain value types, you can implement `INetworkSerializable`, and it will work. Finally, for the other types, you will need to create your own `NetworkVariable`. To achieve that, create a new class, inherit from `NetworkVariableBase`, and implement all the abstract members. If you already had custom `NetworkVariable`, read and write functions now uses our `FastBuffer` to read or write from and to the stream. 
 
 ### Scene Management changes
 
-The scene management had some changes unifying the way users uses it. First, it is now under the `NetworkManager` Singleton. Consequently, you directly access it like so :
+The scene management had some changes unifying the way users uses it. First, it is now under the `NetworkManager` Singleton. Consequently, you directly access it like so : 
 
 ```csharp
 var sceneManager = NetworkManager.Singleton.SceneManager;
