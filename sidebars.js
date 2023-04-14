@@ -11,36 +11,54 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "migration/install"
+                    "id": "installation/install"
                 },
                 {
                     "type": "doc",
-                    "id": "migration/upgrade-guide",
+                    "id": "installation/upgrade_from_mlapi",
                 },
                 {
                     "type": "doc",
-                    "id": "migration/migratingtonetcode"
+                    "id": "installation/upgrade_from_UNet"
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Multiplayer Conceptual Knowledge",
+            "items": [
+                {
+                    "type": "doc",
+                    "id": "terms-concepts/network-topologies",
                 },
                 {
                     "type": "doc",
-                    "id": "migration/migratingfrommlapi"
+                    "id": "learn/listen-server-host-architecture",
                 },
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Hello World",
+                    "label": "Lag",
                     "items": [
                         {
                             "type": "doc",
-                            "id": "tutorials/helloworld/helloworldintro"
+                            "id": "learn/ticks-and-update-rates",
                         },
                         {
                             "type": "doc",
-                            "id": "tutorials/helloworld/helloworldtwo"
-                        }
-                    ]
+                            "id": "learn/lagandpacketloss",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/clientside_interpolation",
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dealing-with-latency",
+                        },
+                    ],
                 },
-
             ],
         },
         {
@@ -50,11 +68,11 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
-                    "id": "getting-started/connection-approval"
+                    "id": "basics/connection-approval"
                 },
                 {
                     "type": "doc",
-                    "id": "getting-started/max-players"
+                    "id": "basics/max-players"
                 },
                 {
                     "type": "doc",
@@ -67,10 +85,6 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "basics/networkbehavior"
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/modularity"
                 },
                 {
                     "type": "doc",
@@ -101,9 +115,44 @@ module.exports = {
                     "id": "relay/relay"
                 },
                 {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Porting from client-hosted to DGS",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/client-vs-dgs"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/porting-to-dgs-game-changes"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/optimizing-server-builds"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/porting-to-dgs/hosting-considerations"
+                        },
+                    ]
+                },
+                {
                     "type": "doc",
                     "id": "advanced-topics/session-management"
-                }
+                },
+                {
+                    "type": "doc",
+                    "id": "advanced-topics/reconnecting-mid-game"
+                },
+                {
+                    "type": "doc",
+                    "id": "reference/dedicated-server"
+                },
             ]
         },
         {
@@ -121,6 +170,7 @@ module.exports = {
                 },
                 {
                     "type": "doc",
+                    "label": "NetworkAnimator",
                     "id": "components/networkanimator"
                 },
             ]
@@ -147,8 +197,12 @@ module.exports = {
             "items": [
                 {
                     "type": "doc",
+                    "id": "advanced-topics/ways-synchronize"
+                },                   
+                {
+                    "type": "doc",
                     "id": "advanced-topics/messaging-system"
-                },
+                },             
                 {
                     "collapsed": true,
                     "type": "category",
@@ -194,10 +248,6 @@ module.exports = {
                             "id": "advanced-topics/message-system/rpc-compatibility"
                         },
                     ]
-                },
-                {
-                    "type": "doc",
-                    "id": "advanced-topics/ways-synchronize"
                 },
                 {
                     "collapsed": true,
@@ -262,14 +312,42 @@ module.exports = {
         {
             "collapsed": true,
             "type": "category",
-            "label": "Scenes",
+            "label": "Scene Management",
             "items": [
                 {
                     "type": "doc",
-                    "id": "basics/scene-management"
+                    "id": "basics/scenemanagement/scene-management-overview"
                 },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Integrated Management",
+                    "items": [                                
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/using-networkscenemanager"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/scene-events"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/timing-considerations"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "basics/scenemanagement/inscene-placed-networkobjects"
+                        },
+                    ]
+                },                
+                {
+                    "type": "doc",
+                    "id": "basics/scenemanagement/custom-management"
+                },                                                                                                     
             ]
         },
+
         {
             "collapsed": true,
             "type": "category",
@@ -286,21 +364,6 @@ module.exports = {
                 {
                     "type": "doc",
                     "id": "tutorials/testing/testing_client_connection_management"
-                },
-            ]
-        },
-        {
-            "collapsed": true,
-            "type": "category",
-            "label": "Tools",
-            "items": [
-                {
-                    "type": "doc",
-                    "id": "tools/install-tools",
-                },
-                {
-                    "type": "doc",
-                    "id": "basics/profiling",
                 },
             ]
         },
@@ -327,224 +390,169 @@ module.exports = {
                 }
             ]
         },
-
         {
             "collapsed": true,
             "type": "category",
             "label": "Walk-Throughs",
             "items": [
                 {
-                    "collapsed": true,
-                    "type": "category",
-                    "label": "Learning Netcode with Goldenpath",
-                    "items": [
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/starting_out"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_foundation_module"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_one"
-                        },
-                        {
-                            "type": "doc",
-                            "id": "tutorials/goldenpath_series/goldenpath_two"
-                        },
-                    ],
-
+                    "type": "doc",
+                    "id": "tutorials/get-started-ngo"
+                },
+                {
+                    "type": "doc",
+                    "id": "tutorials/command-line-helper"
                 },
 
             ]
         },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Educational Samples",
+            "items": [
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Boss Room",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/bossroom"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/bossroom-architecture"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/bossroom-actions"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/networkobject-parenting"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/optimizing-bossroom"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/networkrigidbody"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bossroom/spawn-networkobjects"
+                        },
+                    ],
+                },
+                {
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Bitesize Samples",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-introduction"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-invaders"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-spaceshooter"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-clientdriven"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/bitesize/bitesize-dynamicPrefabs"
+                        },
+                    ]
+                },
+            ],
+        },
+        {
+            "collapsed": true,
+            "type": "category",
+            "label": "Community Contributions",
+            "items": [
+                {
+
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Code Monkey Tutorials",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/codemonkey/codemonkey-video"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/codemonkey/codemonkey-complete"
+                        },
+                 
+                    ]
+                },
+                {
+
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Dilmer Tutorials",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/dilmer-video"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/project-setup"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/corefeatures"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/networkanimator"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dilmer/relay-service-setup"
+                        }
+                    ]
+                },
+                {
+
+                    "collapsed": true,
+                    "type": "category",
+                    "label": "Dapper Tutorials",
+                    "items": [
+                        {
+                            "type": "doc",
+                            "id": "learn/dapper/dapper-video"
+                        },
+                        {
+                            "type": "doc",
+                            "id": "learn/dapper/dapper-upgrade"
+                        },
+
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "doc",
+            "id": "learn/faq",
+        },
+        {
+            "type": "doc",
+            "id": "terms-concepts/mtt-terms"
+        },
     ],
-
-    Multiplayer:
-        [
-            {
-                "type": "doc",
-                "id": "learn/introduction",
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Reference Material",
-                "items": [
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Networking Concepts",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/high-level-terminology"
-                            },
-                            {
-                                "collapsed": true,
-                                "type": "category",
-                                "label": "Lag",
-                                "items": [
-                                    {
-                                        "type": "doc",
-                                        "id": "reference/glossary/ticks-and-update-rates"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/lagandpacketloss"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/clientside_interpolation"
-                                    },
-                                    {
-                                        "type": "doc",
-                                        "id": "learn/dealing-with-latency"
-                                    },
-                                ],
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-terms"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/prioritization"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/relevancy"
-                            },
-                        ],
-
-                    },
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Multiplayer Game Architecture",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/multiplayer-game-arhitecture"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "reference/glossary/network-topologies"
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "learn/listen-server-host-architecture"
-                            }
-                        ]
-                    },
-
-
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Educational Material",
-                "items": [
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Boss Room",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/bossroom"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/bossroom-examples/bossroom-actions"
-                            },
-                        ],
-                    },
-                    {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Bitesize Samples",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/bitesize-introduction"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/bitesize-invaders"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/bitesize-spaceshooter"
-                            }
-                        ]
-                    },
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Community Contributions",
-                "items": [
-                    {
-
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Dilmer Tutorials",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/dilmer-video"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/project-setup"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/corefeatures"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/networkanimator"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dilmer/relay-service-setup"
-                            }
-                        ]
-                    },
-                    {
-
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Dapper Tutorials",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "learn/dapper/dapper-video"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "learn/dapper/dapper-upgrade"
-                            },
-
-                        ]
-                    }
-                ]
-            },
-
-            {
-                "type": "doc",
-                "id": "learn/faq"
-            },
-        ],
-
 
     api:
         [
@@ -561,11 +569,6 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode",
                         "label": "Netcode APIs",
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.AddAllInterestKernel",
-                        "label": "AddAllInterestKernel"
                     },
                     {
                         "type": "doc",
@@ -614,17 +617,30 @@ module.exports = {
                         "id": "api/Unity.Netcode.NetworkUpdateStage",
                         "label": "NetworkUpdateStage"
                     },
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.INetworkPrefabInstanceHandler",
                         "label": "INetworkPrefabInstanceHandler"
                     },
-
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.INetworkStreamDriverConstructor",
-                        "label": "INetworkStreamDriverConstructor"
+                        "id": "api/Unity.Netcode.NetworkPrefab",
+                        "label": "NetworkPrefab"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabs",
+                        "label": "NetworkPrefabs"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabOverride",
+                        "label": "NetworkPrefabOverride"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkPrefabsList",
+                        "label": "NetworkPrefabsList"
                     },
                     {
                         "type": "doc",
@@ -640,11 +656,6 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkPrefabHandler",
                         "label": "NetworkPrefabHandler"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.StreamExtensions",
-                        "label": "StreamExtensions"
                     },
                     {
                         "type": "doc",
@@ -678,63 +689,53 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.ErrorUtilities",
-                        "label": "ErrorUtilities"
-                    },
-                    {
-                        "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferReader",
                         "label": "FastBufferReader"
                     },
                     {
                         "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForEnums",
+                        "label": "FastBufferWriter.ForEnums"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForFixedStrings",
+                        "label": "FastBufferWriter.ForFixedStrings"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForNetworkSerializable",
+                        "label": "FastBufferWriter.ForNetworkSerializable"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForPrimitives",
+                        "label": "FastBufferWriter.ForPrimitives"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.FastBufferWriter.ForStructs",
+                        "label": "FastBufferWriter.ForStructs"
+                    },
+                    {
+                        "type": "doc",
                         "id": "api/Unity.Netcode.FastBufferWriter",
-                        "label": "ByteUnpFastBufferWriteracker"
-                    },
-
-
-
-                ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Interest",
-                "items": [
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.Interest",
-                        "label": "Interest"
+                        "label": "FastBufferWriter"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.AddAllInterestKernel",
-                        "label": "AddAllInterestKernel"
+                        "id": "api/Unity.Netcode.INetworkSerializeByMemcpy",
+                        "label": "INetworkSerializeByMemcpy"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.IInterestKernel-1",
-                        "label": "IInterestKernel-1"
+                        "id": "api/Unity.Netcode.ForceNetworkSerializeByMemcpy-1",
+                        "label": "ForceNetworkSerializeByMemcpy-1"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.IInterestNode-1",
-                        "label": "IInterestNode-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.InterestManager-1",
-                        "label": "InterestManager-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.Interest.InterestNodeStatic-1",
-                        "label": "InterestNodeStatic-1"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.RadiusInterestKernel",
-                        "label": "RadiusInterestKernel"
+                        "id": "api/Unity.Netcode.NetworkVariableWritePermission",
+                        "label": "NetworkVariableWritePermission"
                     },
                 ],
             },
@@ -743,7 +744,6 @@ module.exports = {
                 "type": "category",
                 "label": "Time",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkTime",
@@ -755,19 +755,6 @@ module.exports = {
                         "label": "NetworkTimeSystem"
                     },
                 ],
-            },
-            {
-                "collapsed": true,
-                "type": "category",
-                "label": "Collections",
-                "items": [
-
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.FixedQueue-1",
-                        "label": "FixedQueue-1"
-                    },
-                ]
             },
             {
                 "collapsed": true,
@@ -791,7 +778,6 @@ module.exports = {
                 "type": "category",
                 "label": "Connection",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkClient",
@@ -814,7 +800,6 @@ module.exports = {
                 "type": "category",
                 "label": "Exceptions",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.InvalidChannelException",
@@ -857,7 +842,6 @@ module.exports = {
                 "type": "category",
                 "label": "Logging",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.LogLevel",
@@ -875,7 +859,6 @@ module.exports = {
                 "type": "category",
                 "label": "Messaging",
                 "items": [
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.ClientRpcAttribute",
@@ -962,9 +945,14 @@ module.exports = {
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovedDelegate",
-                        "label": "ConnectionApprovedDelegate"
-                    }
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalRequest",
+                        "label": "ConnectionApprovalRequest"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkManager.ConnectionApprovalResponse",
+                        "label": "ConnectionApprovalResponse"
+                    },
                 ]
             },
             {
@@ -977,11 +965,6 @@ module.exports = {
                         "type": "doc",
                         "id": "api/Unity.Netcode.NetworkVariableBase",
                         "label": "NetworkVariableBase"
-                    },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.NetworkVariableHelper",
-                        "label": "NetworkVariableHelper"
                     },
                     {
                         "type": "doc",
@@ -998,6 +981,16 @@ module.exports = {
                         "id": "api/Unity.Netcode.NetworkVariableReadPermission",
                         "label": "NetworkVariableReadPermission"
                     },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.UserNetworkVariableSerialization-1",
+                        "label": "UserNetworkVariableSerialization-1"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkVariableSerializationTypes",
+                        "label": "NetworkVariableSerializationTypes"
+                    },
                 ],
             },
             {
@@ -1005,7 +998,6 @@ module.exports = {
                 "type": "category",
                 "label": "NetworkList-1",
                 "items": [
-
                     {
                         "collapsed": true,
                         "type": "category",
@@ -1042,7 +1034,6 @@ module.exports = {
                     }
                 ]
             },
-
             {
                 "collapsed": true,
                 "type": "category",
@@ -1066,7 +1057,6 @@ module.exports = {
                     },
                 ]
             },
-
             {
                 "collapsed": true,
                 "type": "category",
@@ -1123,7 +1113,6 @@ module.exports = {
                         "id": "api/Unity.Netcode.NetworkSceneManager.OnUnloadDelegateHandler",
                         "label": "OnUnloadDelegateHandler"
                     },
-
                 ]
             },
             {
@@ -1136,14 +1125,16 @@ module.exports = {
                         "id": "api/Unity.Netcode.Arithmetic",
                         "label": "Arithmetic"
                     },
-
                     {
                         "type": "doc",
                         "id": "api/Unity.Netcode.INetworkSerializable",
                         "label": "INetworkSerializable"
                     },
-
-
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.NetworkVariableSerializationTypes",
+                        "label": "NetworkVariableSerializationTypes"
+                    },
                 ]
             },
             {
@@ -1168,60 +1159,59 @@ module.exports = {
                         "id": "api/Unity.Netcode.NetworkTransport",
                         "label": "NetworkTransport"
                     },
-                    {
-                        "type": "doc",
-                        "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
-                        "label": "UnityTransport.ProtocolType"
-                    }
                 ]
             },
-
             {
                 "collapsed": true,
                 "type": "category",
-                "label": "Transports",
+                "label": "Transports.UTP",
                 "items": [
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.UnityTransport",
-                        "label": "UnityTransport"
+                        "id": "api/Unity.Netcode.Transports.UTP.ErrorUtilities",
+                        "label": "Transports.UTP.ErrorUtilities"
                     },
                     {
                         "type": "doc",
-                        "id": "api/Unity.Netcode.UnityTransport.ProtocolType",
-                        "label": "ProtocolType"
+                        "id": "api/Unity.Netcode.Transports.UTP.SecretsLoaderHelper",
+                        "label": "Transports.UTP.SecretsLoaderHelper"
                     },
-
                     {
-                        "collapsed": true,
-                        "type": "category",
-                        "label": "Transports.UNET",
-                        "items": [
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET",
-                                "label": "UNET"
-                            },
-
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET.UNetChannel",
-                                "label": "UNetChannel"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport",
-                                "label": "UNetTransport"
-                            },
-                            {
-                                "type": "doc",
-                                "id": "api/Unity.Netcode.Transports.UNET.UNetTransport.SendMode",
-                                "label": "UNetTransport.SendMode"
-                            },
-                        ],
-                    }
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.INetworkStreamDriverConstructor",
+                        "label": "Transports.UTP.INetworkStreamDriverConstructor"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP",
+                        "label": "Transports.UTP"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.NetworkMetricsContext",
+                        "label": "Transports.UTP.NetworkMetricsContext"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport.ConnectionAddressData",
+                        "label": "Transports.UTP.UnityTransport.ConnectionAddressData"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport",
+                        "label": "Transports.UTP.UnityTransport"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport.ProtocolType",
+                        "label": "Transports.UTP.UnityTransport.ProtocolType"
+                    },
+                    {
+                        "type": "doc",
+                        "id": "api/Unity.Netcode.Transports.UTP.UnityTransport.SimulatorParameters",
+                        "label": "Transports.UTP.UnityTransport.SimulatorParameters"
+                    },
                 ]
-            }
-
+            },
         ]
 }

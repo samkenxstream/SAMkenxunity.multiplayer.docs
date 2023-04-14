@@ -1,13 +1,13 @@
----  
-id: Unity.Netcode.CustomMessagingManager  
-title: Unity.Netcode.CustomMessagingManager  
+---
+id: Unity.Netcode.CustomMessagingManager
+title: Unity.Netcode.CustomMessagingManager
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:24 pm
 ---
 
 <div class="markdown level0 summary">
 
-The manager class to manage custom messages, note that this is different
-from the NetworkManager custom messages. These are named and are much
-easier to use.
+The manager class to manage custom messages, note that this is different from the NetworkManager custom messages. These are named and are much easier to use.
 
 </div>
 
@@ -17,7 +17,7 @@ easier to use.
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -35,7 +35,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -46,6 +52,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -67,31 +79,19 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public class CustomMessagingManager
 ```
 
-## 
+## Methods
 
 ### RegisterNamedMessageHandler(String, CustomMessagingManager.HandleNamedMessageDelegate)
 
@@ -118,7 +118,7 @@ public void RegisterNamedMessageHandler(string name, CustomMessagingManager.Hand
 | System.String                                     | name     | Name of the message.                                  |
 | CustomMessagingManager.HandleNamedMessageDelegate | callback | The callback to run when a named message is received. |
 
-### SendNamedMessage(String, IReadOnlyList\&lt;UInt64&gt;, FastBufferWriter, NetworkDelivery)
+### SendNamedMessage(String, IReadOnlyList\<UInt64\>, FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -138,12 +138,12 @@ public void SendNamedMessage(string messageName, IReadOnlyList<ulong> clientIds,
 
 #### Parameters
 
-| Type                           | Name            | Description                                       |
-|--------------------------------|-----------------|---------------------------------------------------|
-| System.String                  | messageName     | The message name to send                          |
-| IReadOnlyList\&lt;System.UInt64&gt; | clientIds       | The clients to send to, sends to everyone if null |
-| FastBufferWriter               | messageStream   | The message stream containing the data            |
-| NetworkDelivery                | networkDelivery | The delivery type (QoS) to send data with         |
+| Type                           | Name            | Description                               |
+|--------------------------------|-----------------|-------------------------------------------|
+| System.String                  | messageName     | The message name to send                  |
+| IReadOnlyList\<System.UInt64\> | clientIds       | The clients to send to                    |
+| FastBufferWriter               | messageStream   | The message stream containing the data    |
+| NetworkDelivery                | networkDelivery | The delivery type (QoS) to send data with |
 
 ### SendNamedMessage(String, UInt64, FastBufferWriter, NetworkDelivery)
 
@@ -194,11 +194,11 @@ public void SendNamedMessageToAll(string messageName, FastBufferWriter messageSt
 
 | Type             | Name            | Description                               |
 |------------------|-----------------|-------------------------------------------|
-| System.String    | messageName     |                                           |
+| System.String    | messageName     | The message name to send                  |
 | FastBufferWriter | messageStream   | The message stream containing the data    |
 | NetworkDelivery  | networkDelivery | The delivery type (QoS) to send data with |
 
-### SendUnnamedMessage(IReadOnlyList\&lt;UInt64&gt;, FastBufferWriter, NetworkDelivery)
+### SendUnnamedMessage(IReadOnlyList\<UInt64\>, FastBufferWriter, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
@@ -220,7 +220,7 @@ public void SendUnnamedMessage(IReadOnlyList<ulong> clientIds, FastBufferWriter 
 
 | Type                           | Name            | Description                                       |
 |--------------------------------|-----------------|---------------------------------------------------|
-| IReadOnlyList\&lt;System.UInt64&gt; | clientIds       | The clients to send to, sends to everyone if null |
+| IReadOnlyList\<System.UInt64\> | clientIds       | The clients to send to, sends to everyone if null |
 | FastBufferWriter               | messageBuffer   | The message stream containing the data            |
 | NetworkDelivery                | networkDelivery | The delivery type (QoS) to send data with         |
 
@@ -299,7 +299,7 @@ public void UnregisterNamedMessageHandler(string name)
 |---------------|------|--------------------------|
 | System.String | name | The name of the message. |
 
-## 
+## Events
 
 ### OnUnnamedMessage
 

@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.NetworkBehaviour  
-title: Unity.Netcode.NetworkBehaviour  
+---
+id: Unity.Netcode.NetworkBehaviour
+title: Unity.Netcode.NetworkBehaviour
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:11 pm
 ---
 
 <div class="markdown level0 summary">
@@ -15,7 +17,7 @@ The base class to override to write network code. Inherits MonoBehaviour
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -31,23 +33,24 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public abstract class NetworkBehaviour : MonoBehaviour
 ```
 
-## 
+## Properties
 
 ### HasNetworkObject
 
 <div class="markdown level1 summary">
 
 Gets whether or not this NetworkBehaviour instance has a NetworkObject
+
 owner.
 
 </div>
@@ -83,7 +86,7 @@ Gets if we are executing as client
 #### Declaration
 
 ``` lang-csharp
-protected bool IsClient { get; }
+public bool IsClient { get; }
 ```
 
 #### Property Value
@@ -107,7 +110,7 @@ Gets if we are executing as Host, I.E Server and Client
 #### Declaration
 
 ``` lang-csharp
-protected bool IsHost { get; }
+public bool IsHost { get; }
 ```
 
 #### Property Value
@@ -120,7 +123,7 @@ protected bool IsHost { get; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is the the personal clients player object
+If a NetworkObject is assigned, it will return whether or not this NetworkObject is the local player object. If no NetworkObject is assigned it will always return false.
 
 </div>
 
@@ -168,8 +171,7 @@ public bool IsOwnedByServer { get; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is owned by the local player or if the object is the
-local player object
+Gets if the object is owned by the local player or if the object is the local player object
 
 </div>
 
@@ -204,7 +206,7 @@ Gets if we are executing as server
 #### Declaration
 
 ``` lang-csharp
-protected bool IsServer { get; }
+public bool IsServer { get; }
 ```
 
 #### Property Value
@@ -217,9 +219,7 @@ protected bool IsServer { get; }
 
 <div class="markdown level1 summary">
 
-Used to determine if it is safe to access NetworkObject and
-NetworkManager from within a NetworkBehaviour component Primarily useful
-when checking NetworkObject/NetworkManager properties within FixedUpate
+Used to determine if it is safe to access NetworkObject and NetworkManager from within a NetworkBehaviour component Primarily useful when checking NetworkObject/NetworkManager properties within FixedUpate
 
 </div>
 
@@ -265,11 +265,7 @@ public ushort NetworkBehaviourId { get; }
 
 ### NetworkManager
 
-<div class="markdown level1 summary">
-
-Gets the NetworkManager that owns this NetworkBehaviour instance See
-note around `NetworkObject` for how there is a chicken / egg problem
-when we are not initialized
+<div class="markdown level1 summary"> Gets the NetworkManager that owns this NetworkBehaviour instance See note around `NetworkObject` for how there is a chicken / egg problem when we are not initialized
 
 </div>
 
@@ -293,16 +289,7 @@ public NetworkManager NetworkManager { get; }
 
 <div class="markdown level1 summary">
 
-Gets the NetworkObject that owns this NetworkBehaviour instance TODO:
-this needs an overhaul. It's expensive, it's ja little naive in how it
-looks for networkObject in its parent and worst, it creates a puzzle if
-you are a NetworkBehaviour wanting to see if you're live or not (e.g.
-editor code). All you want to do is find out if NetworkManager is null,
-but to do that you need NetworkObject, but if you try and grab
-NetworkObject and NetworkManager isn't up you'll get the warning below.
-This is why IsBehaviourEditable had to be created. Matt was going to
-re-do how NetworkObject works but it was close to the release and too
-risky to change
+Gets the NetworkObject that owns this NetworkBehaviour instance
 
 </div>
 
@@ -370,14 +357,12 @@ public ulong OwnerClientId { get; }
 |---------------|-------------|
 | System.UInt64 |             |
 
-## 
+## Methods
 
 ### GetNetworkBehaviour(UInt16)
 
 <div class="markdown level1 summary">
-
-Returns a the NetworkBehaviour with a given BehaviourId for the current
-NetworkObject
+Returns a the NetworkBehaviour with a given BehaviourId for the current NetworkObject
 
 </div>
 
@@ -437,6 +422,8 @@ protected NetworkObject GetNetworkObject(ulong networkId)
 
 <div class="markdown level1 summary">
 
+Invoked when the the NetworkBehaviour is attached to. NOTE: If you override this, you will want to always invoke this base class version of this OnDestroy() method!!
+
 </div>
 
 <div class="markdown level1 conceptual">
@@ -489,8 +476,7 @@ public virtual void OnLostOwnership()
 
 <div class="markdown level1 summary">
 
-Gets called when the NetworkObject gets despawned. Is called both on the
-server and clients.
+Gets called when the NetworkObject gets despawned. Is called both on the server and clients.
 
 </div>
 
@@ -508,8 +494,7 @@ public virtual void OnNetworkDespawn()
 
 <div class="markdown level1 summary">
 
-Gets called when the parent NetworkObject of this NetworkBehaviour's
-NetworkObject has changed
+Gets called when the parent NetworkObject of this NetworkBehaviour's NetworkObject has changed
 
 </div>
 
@@ -525,16 +510,15 @@ public virtual void OnNetworkObjectParentChanged(NetworkObject parentNetworkObje
 
 #### Parameters
 
-| Type          | Name                | Description |
-|---------------|---------------------|-------------|
-| NetworkObject | parentNetworkObject |             |
+| Type          | Name                | Description                  |
+|---------------|---------------------|------------------------------|
+| NetworkObject | parentNetworkObject | the new NetworkObject parent |
 
 ### OnNetworkSpawn()
 
 <div class="markdown level1 summary">
 
-Gets called when the NetworkObject gets spawned, message handlers are
-ready to be registered and the network is setup.
+Gets called when the NetworkObject gets spawned, message handlers are ready to be registered and the network is setup.
 
 </div>
 
@@ -547,3 +531,43 @@ ready to be registered and the network is setup.
 ``` lang-csharp
 public virtual void OnNetworkSpawn()
 ```
+
+### OnSynchronize\<T\>(ref BufferSerializer\<T\>)
+
+<div class="markdown level1 summary">
+
+Override this method if your derived NetworkBehaviour requires custom synchronization data. Note: Use of this method is only for the initial client synchronization of NetworkBehaviours and will increase the payload size for client synchronization and dynamically spawned NetworkObjects.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+protected virtual void OnSynchronize<T>(ref BufferSerializer<T> serializer)
+
+    where T : IReaderWriter
+```
+
+#### Parameters
+
+| Type                  | Name       | Description                                       |
+|-----------------------|------------|---------------------------------------------------|
+| BufferSerializer\<T\> | serializer | The serializer to use to read and write the data. |
+
+#### Type Parameters
+
+| Name | Description                                                                                                              |
+|------|--------------------------------------------------------------------------------------------------------------------------|
+| T    | Either BufferSerializerReader or BufferSerializerWriter, depending whether the serializer is in read mode or write mode. |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+When serializing (writing) this will be invoked during the client synchronization period and when spawning new NetworkObjects. When deserializing (reading), this will be invoked prior to the NetworkBehaviour's associated NetworkObject being spawned.
+
+</div>

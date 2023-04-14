@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.PendingClient.State  
-title: Unity.Netcode.PendingClient.State  
+---
+id: Unity.Netcode.PendingClient.State
+title: Unity.Netcode.PendingClient.State
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:55 pm
 ---
 
 <div class="markdown level0 summary">
@@ -13,17 +15,17 @@ The states of a connection
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public enum State
 ```
 
-## 
+## Fields
 
 | Name              | Description                                                |
 |-------------------|------------------------------------------------------------|

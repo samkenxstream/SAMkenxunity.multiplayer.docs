@@ -1,9 +1,15 @@
----  
-id: Unity.Netcode.ServerRpcParams  
-title: Unity.Netcode.ServerRpcParams  
+---
+id: Unity.Netcode.ServerRpcParams
+title: Unity.Netcode.ServerRpcParams
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:38:12 pm
 ---
 
 <div class="markdown level0 summary">
+
+Server-Side RPC Can be used with any sever-side remote procedure call
+
+Note: typically this is use primarily for the ServerRpcReceiveParams
 
 </div>
 
@@ -13,7 +19,7 @@ title: Unity.Netcode.ServerRpcParams
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -41,33 +47,34 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public struct ServerRpcParams
 ```
 
-## 
+## Fields
 
 ### Receive
 
 <div class="markdown level1 summary">
+The client RPC receive parameters provides you with the sender's identifier
 
 </div>
 
@@ -90,6 +97,8 @@ public ServerRpcReceiveParams Receive
 ### Send
 
 <div class="markdown level1 summary">
+
+The server RPC send parameters (currently a place holder)
 
 </div>
 

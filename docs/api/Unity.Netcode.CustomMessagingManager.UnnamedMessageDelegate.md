@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate  
-title: Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate  
+---
+id: Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate
+title: Unity.Netcode.CustomMessagingManager.UnnamedMessageDelegate
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:31 pm
 ---
 
 <div class="markdown level0 summary">
@@ -13,17 +15,17 @@ Delegate used for incoming unnamed messages
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate void UnnamedMessageDelegate(ulong clientId, FastBufferReader reader);
 ```
 
-##### Parameters
+## Parameters
 
 | Type             | Name       | Description                            |
 |------------------|------------|----------------------------------------|

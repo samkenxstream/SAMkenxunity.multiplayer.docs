@@ -1,10 +1,13 @@
----  
-id: Unity.Netcode.ClientRpcSendParams  
-title: Unity.Netcode.ClientRpcSendParams  
+---
+id: Unity.Netcode.ClientRpcSendParams
+title: Unity.Netcode.ClientRpcSendParams
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:22 pm
 ---
 
 <div class="markdown level0 summary">
 
+Client-Side RPC The send parameters, when sending client RPCs, provides you wil the ability to target specific clients as a managed or unmanaged list: TargetClientIds and TargetClientIdsNativeArray
 </div>
 
 <div class="markdown level0 conceptual">
@@ -13,7 +16,7 @@ title: Unity.Netcode.ClientRpcSendParams
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -41,38 +44,35 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public struct ClientRpcSendParams
 ```
 
-## 
+## Fields
 
 ### TargetClientIds
 
 <div class="markdown level1 summary">
 
-IEnumerable version of target id list - use either this OR
-TargetClientIdsNativeArray Note: Even if you provide a value type such
-as NativeArray, enumerating it will cause boxing. If you want to avoid
-boxing, use TargetClientIdsNativeArray
+IEnumerable version of target id list - use either this OR TargetClientIdsNativeArray Note: Even if you provide a value type such as NativeArray, enumerating it will cause boxing. If you want to avoid boxing, use TargetClientIdsNativeArray
 
 </div>
 
@@ -90,15 +90,13 @@ public IReadOnlyList<ulong> TargetClientIds
 
 | Type                           | Description |
 |--------------------------------|-------------|
-| IReadOnlyList\&lt;System.UInt64&gt;|             |
+| IReadOnlyList\<System.UInt64\> |             |
 
 ### TargetClientIdsNativeArray
 
 <div class="markdown level1 summary">
 
-NativeArray version of target id list - use either this OR
-TargetClientIds This option avoids any GC allocations but is a bit
-trickier to use.
+NativeArray version of target id list - use either this OR TargetClientIds This option avoids any GC allocations but is a bit trickier to use.
 
 </div>
 
@@ -116,4 +114,4 @@ public NativeArray<ulong>? TargetClientIdsNativeArray
 
 | Type                                            | Description |
 |-------------------------------------------------|-------------|
-| System.Nullable\<NativeArray\&lt;System.UInt64&gt;\> |             |
+| System.Nullable\<NativeArray\<System.UInt64\>\> |             |

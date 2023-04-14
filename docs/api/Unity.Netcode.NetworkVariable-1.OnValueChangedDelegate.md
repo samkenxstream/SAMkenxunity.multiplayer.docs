@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate  
-title: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate  
+---
+id: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
+title: Unity.Netcode.NetworkVariable-1.OnValueChangedDelegate
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:39:54 pm
 ---
 
 <div class="markdown level0 summary">
@@ -13,17 +15,17 @@ Delegate type for value changed event
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate void OnValueChangedDelegate(T previousValue, T newValue);
 ```
 
-##### Parameters
+## Parameters
 
 | Type | Name            | Description                 |
 |------|-----------------|-----------------------------|

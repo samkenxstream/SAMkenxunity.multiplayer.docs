@@ -1,13 +1,13 @@
----  
-id: Unity.Netcode.BitWriter  
-title: Unity.Netcode.BitWriter  
+---
+id: Unity.Netcode.BitWriter
+title: Unity.Netcode.BitWriter
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:33:56 pm
 ---
 
 <div class="markdown level0 summary">
 
-Helper class for doing bitwise writes for a FastBufferWriter. Ensures
-all bitwise writes end on proper byte alignment so FastBufferWriter
-doesn't have to be concerned with misaligned writes.
+Helper class for doing bitwise writes for a FastBufferWriter. Ensures all bitwise writes end on proper byte alignment so FastBufferWriter doesn't have to be concerned with misaligned writes.
 
 </div>
 
@@ -17,7 +17,7 @@ doesn't have to be concerned with misaligned writes.
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -45,36 +45,35 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public ref struct BitWriter
 ```
 
-## 
+## Properties
 
 ### BitAligned
 
 <div class="markdown level1 summary">
 
-Whether or not the current BitPosition is evenly divisible by 8. I.e.
-whether or not the BitPosition is at a byte boundary.
+Whether or not the current BitPosition is evenly divisible by 8. I.e. whether or not the BitPosition is at a byte boundary.
 
 </div>
 
@@ -94,14 +93,13 @@ public readonly bool BitAligned { get; }
 |----------------|-------------|
 | System.Boolean |             |
 
-## 
+## Methods
 
 ### Dispose()
 
 <div class="markdown level1 summary">
 
-Pads the written bit count to byte alignment and commits the write back
-to the writer
+Pads the written bit count to byte alignment and commits the write back to the writer
 
 </div>
 
@@ -119,19 +117,7 @@ public void Dispose()
 
 <div class="markdown level1 summary">
 
-Allows faster serialization by batching bounds checking. When you know
-you will be writing multiple fields back-to-back and you know the total
-size, you can call TryBeginWriteBits() once on the total size, and then
-follow it with calls to WriteBit() or WriteBits().
-
-Bitwise write operations will throw OverflowException in editor and
-development builds if you go past the point you've marked using
-TryBeginWriteBits(). In release builds, OverflowException will not be
-thrown for performance reasons, since the point of using TryBeginWrite
-is to avoid bounds checking in the following operations in release
-builds. Instead, attempting to write past the marked position in release
-builds will write to random memory and cause undefined behavior, likely
-including instability and crashes.
+Allows faster serialization by batching bounds checking. When you know you will be writing multiple fields back-to-back and you know the total size, you can call TryBeginWriteBits() once on the total size, and then follow it with calls to WriteBit() or WriteBits(). Bitwise write operations will throw OverflowException in editor and development builds if you go past the point you've marked using TryBeginWriteBits(). In release builds, OverflowException will not be thrown for performance reasons, since the point of using TryBeginWrite is to avoid bounds checking in the following operations in release builds. Instead, attempting to write past the marked position in release builds will write to random memory and cause undefined behavior, likely including instability and crashes.
 
 </div>
 

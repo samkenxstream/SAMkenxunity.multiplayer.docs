@@ -1,12 +1,13 @@
----  
-id: Unity.Netcode.InvalidParentException  
-title: Unity.Netcode.InvalidParentException  
+---
+id: Unity.Netcode.InvalidParentException
+title: Unity.Netcode.InvalidParentException
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:06 pm
 ---
 
 <div class="markdown level0 summary">
 
-Exception thrown when the new parent candidate of the NetworkObject is
-not valid
+Exception thrown when the new parent candidate of the NetworkObject is not valid
 
 </div>
 
@@ -16,7 +17,7 @@ not valid
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -40,13 +41,7 @@ System.Dynamic.ExpandoObject
 
 <div classs="implements">
 
-##### Implements
-
-<div>
-
-System.Runtime.InteropServices.\_Exception
-
-</div>
+## Implements
 
 <div>
 
@@ -54,15 +49,27 @@ System.Runtime.Serialization.ISerializable
 
 </div>
 
+<div>
+
+System.Runtime.InteropServices.\_Exception
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
 Exception.GetBaseException()
+
+</div>
+
+<div>
+
+Exception.ToString()
 
 </div>
 
@@ -80,7 +87,7 @@ Exception.GetType()
 
 <div>
 
-Exception.ToString()
+Exception.Message
 
 </div>
 
@@ -92,31 +99,13 @@ Exception.Data
 
 <div>
 
-Exception.HelpLink
-
-</div>
-
-<div>
-
-Exception.HResult
-
-</div>
-
-<div>
-
 Exception.InnerException
 
 </div>
 
 <div>
 
-Exception.Message
-
-</div>
-
-<div>
-
-Exception.Source
+Exception.TargetSite
 
 </div>
 
@@ -128,7 +117,19 @@ Exception.StackTrace
 
 <div>
 
-Exception.TargetSite
+Exception.HelpLink
+
+</div>
+
+<div>
+
+Exception.Source
+
+</div>
+
+<div>
+
+Exception.HResult
 
 </div>
 
@@ -146,6 +147,12 @@ Object.Equals(Object, Object)
 
 <div>
 
+Object.ReferenceEquals(Object, Object)
+
+</div>
+
+<div>
+
 Object.GetHashCode()
 
 </div>
@@ -156,29 +163,25 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-</div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Assembly**: Netcode.dll
 
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
-public class InvalidParentException : Exception, _Exception, ISerializable
+public class InvalidParentException : Exception, ISerializable, _Exception
 ```
 
-## 
+## Constructors
 
 ### InvalidParentException()
 
 <div class="markdown level1 summary">
+
+Constructor for InvalidParentException
 
 </div>
 
@@ -241,12 +244,12 @@ public InvalidParentException(string message, Exception innerException)
 
 <div>
 
-System.Runtime.InteropServices.\_Exception
+System.Runtime.Serialization.ISerializable
 
 </div>
 
 <div>
 
-System.Runtime.Serialization.ISerializable
+System.Runtime.InteropServices.\_Exception
 
 </div>

@@ -1,12 +1,14 @@
----  
-id: Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnSynchronizeDelegateHandler
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:12 pm
 ---
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnSynchronize event.  
-See also:  
+Delegate declaration for the OnSynchronize event.
+See also:
 Synchronize for more information
 
 </div>
@@ -15,17 +17,17 @@ Synchronize for more information
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate void OnSynchronizeDelegateHandler(ulong clientId);
 ```
 
-##### Parameters
+## Parameters
 
 | Type          | Name       | Description                                                                                                        |
 |---------------|------------|--------------------------------------------------------------------------------------------------------------------|

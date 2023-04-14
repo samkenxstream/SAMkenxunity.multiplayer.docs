@@ -1,9 +1,13 @@
----  
-id: Unity.Netcode.ClientRpcReceiveParams  
-title: Unity.Netcode.ClientRpcReceiveParams  
+---
+id: Unity.Netcode.ClientRpcReceiveParams
+title: Unity.Netcode.ClientRpcReceiveParams
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:19 pm
 ---
 
 <div class="markdown level0 summary">
+
+Client-Side RPC Place holder. ServerRpcParams Note: Server will always be the sender, so this structure is a place holder
 
 </div>
 
@@ -13,7 +17,7 @@ title: Unity.Netcode.ClientRpcReceiveParams
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -41,23 +45,23 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public struct ClientRpcReceiveParams

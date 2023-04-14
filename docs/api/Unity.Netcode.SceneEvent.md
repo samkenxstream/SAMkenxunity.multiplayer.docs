@@ -1,14 +1,12 @@
----  
-id: Unity.Netcode.SceneEvent  
-title: Unity.Netcode.SceneEvent  
+---
+id: Unity.Netcode.SceneEvent
+title: Unity.Netcode.SceneEvent
 ---
 
 <div class="markdown level0 summary">
 
-Used for local notifications of various scene events. The OnSceneEvent
-of delegate type NetworkSceneManager.SceneEventDelegate uses this class
-to provide scene event status.  
-*Note: This is only when EnableSceneManagement is enabled.*  
+Used for local notifications of various scene events. The OnSceneEvent of delegate type NetworkSceneManager.SceneEventDelegate uses this class to provide scene event status.  
+*Note: This is only when EnableSceneManagement is enabled.* *\*\*\* Do not start new scene events within scene event notification callbacks.*  
 See also:  
 SceneEventType
 
@@ -42,6 +40,12 @@ System.Dynamic.ExpandoObject
 
 <div>
 
+Object.ToString()
+
+</div>
+
+<div>
+
 Object.Equals(Object)
 
 </div>
@@ -49,6 +53,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -70,23 +80,11 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
-</div>
-
-<div>
-
-Object.ToString()
-
-</div>
-
 </div>
 
 ##### **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+##### **Assembly**: Netcode.dll
 
 ##### Syntax
 
@@ -94,17 +92,16 @@ Object.ToString()
 public class SceneEvent
 ```
 
-## 
+## Fields
 
 ### AsyncOperation
 
 <div class="markdown level1 summary">
 
-The returned by  
-This is set for the following SceneEventTypes:
+The returned by This is set for the following SceneEventTypes:
 
--   Load
--   Unload
+- Load
+- Unload
 
 </div>
 
@@ -131,23 +128,18 @@ public AsyncOperation AsyncOperation
 The client identifier can vary depending upon the following
 conditions:  
 
-1.  SceneEventTypes that always set the ClientId to the local client
-    identifier, are initiated (and processed locally) by the
-    server-host, and sent to all clients to be processed.  
-    -   Load
-    -   Unload
-    -   Synchronize
-    -   ReSynchronize
-2.  Events that always set the ClientId to the local client identifier,
-    are initiated (and processed locally) by a client or server-host,
-    and if initiated by a client will always be sent to and processed on
-    the server-host:
-    -   LoadComplete
-    -   UnloadComplete
-    -   SynchronizeComplete
+1.  SceneEventTypes that always set the ClientId to the local client identifier, are initiated (and processed locally) by the server-host, and sent to all clients to be processed.  
+    - Load
+    - Unload
+    - Synchronize
+    - ReSynchronize
+2.  Events that always set the ClientId to the local client identifier, are initiated (and processed locally) by a client or server-host, and if initiated by a client will always be sent to and processed on the server-host:
+    - LoadComplete
+    - UnloadComplete
+    - SynchronizeComplete
 3.  Events that always set the ClientId to the ServerId:
-    -   LoadEventCompleted
-    -   UnloadEventCompleted
+    - LoadEventCompleted
+    - UnloadEventCompleted
 
 </div>
 
@@ -171,11 +163,10 @@ public ulong ClientId
 
 <div class="markdown level1 summary">
 
-List of clients that completed a loading or unloading event.  
-This is set for the following SceneEventTypes:
+List of clients that completed a loading or unloading event. This is set for the following SceneEventTypes:
 
--   LoadEventCompleted
--   UnloadEventCompleted
+- LoadEventCompleted
+- UnloadEventCompleted
 
 </div>
 
@@ -199,11 +190,10 @@ public List<ulong> ClientsThatCompleted
 
 <div class="markdown level1 summary">
 
-List of clients that timed out during a loading or unloading event.  
-This is set for the following SceneEventTypes:
+List of clients that timed out during a loading or unloading event. This is set for the following SceneEventTypes:
 
--   LoadEventCompleted
--   UnloadEventCompleted
+- LoadEventCompleted
+- UnloadEventCompleted
 
 </div>
 
@@ -227,16 +217,14 @@ public List<ulong> ClientsThatTimedOut
 
 <div class="markdown level1 summary">
 
-If applicable, this reflects the type of scene loading or unloading that
-is occurring.  
-This is set for the following SceneEventTypes:
+If applicable, this reflects the type of scene loading or unloading that is occurring. This is set for the following SceneEventTypes:
 
--   Load
--   Unload
--   LoadComplete
--   UnloadComplete
--   LoadEventCompleted
--   UnloadEventCompleted
+- Load
+- Unload
+- LoadComplete
+- UnloadComplete
+- LoadEventCompleted
+- UnloadEventCompleted
 
 </div>
 
@@ -263,7 +251,7 @@ public LoadSceneMode LoadSceneMode
 When a scene is loaded, the Scene structure is returned.  
 This is set for the following SceneEventTypes:
 
--   LoadComplete
+- LoadComplete
 
 </div>
 
@@ -314,12 +302,12 @@ public SceneEventType SceneEventType
 This will be set to the scene name that the event pertains to.  
 This is set for the following SceneEventTypes:
 
--   Load
--   Unload
--   LoadComplete
--   UnloadComplete
--   LoadEventCompleted
--   UnloadEventCompleted
+- Load
+- Unload
+- LoadComplete
+- UnloadComplete
+- LoadEventCompleted
+- UnloadEventCompleted
 
 </div>
 

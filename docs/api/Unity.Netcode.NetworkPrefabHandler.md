@@ -1,14 +1,13 @@
----  
-id: Unity.Netcode.NetworkPrefabHandler  
-title: Unity.Netcode.NetworkPrefabHandler  
+---
+id: Unity.Netcode.NetworkPrefabHandler
+title: Unity.Netcode.NetworkPrefabHandler
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:54 pm
 ---
 
 <div class="markdown level0 summary">
 
-Primary handler to add or remove customized spawn and destroy handlers
-for a network prefab (i.e. a prefab with a NetworkObject component)
-Register custom prefab handlers by implementing the
-INetworkPrefabInstanceHandler interface.
+Primary handler to add or remove customized spawn and destroy handlers for a network prefab (i.e. a prefab with a NetworkObject component) Register custom prefab handlers by implementing the INetworkPrefabInstanceHandler interface.
 
 </div>
 
@@ -18,7 +17,7 @@ INetworkPrefabInstanceHandler interface.
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -36,7 +35,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -47,6 +52,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -68,38 +79,25 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public class NetworkPrefabHandler
 ```
 
-## 
+## Methods
 
 ### AddHandler(GameObject, INetworkPrefabInstanceHandler)
 
 <div class="markdown level1 summary">
 
-Use a to register a class that implements the
-INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
+Use a to register a class that implements the INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
@@ -130,9 +128,7 @@ public bool AddHandler(GameObject networkPrefabAsset, INetworkPrefabInstanceHand
 
 <div class="markdown level1 summary">
 
-Use a Unity.Netcode.NetworkObject.GlobalObjectIdHash to register a class
-that implements the INetworkPrefabInstanceHandler interface with the
-NetworkPrefabHandler
+Use a Unity.Netcode.NetworkObject.GlobalObjectIdHash to register a class that implements the INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
@@ -163,8 +159,7 @@ public bool AddHandler(uint globalObjectIdHash, INetworkPrefabInstanceHandler in
 
 <div class="markdown level1 summary">
 
-Use a NetworkObject to register a class that implements the
-INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
+Use a NetworkObject to register a class that implements the INetworkPrefabInstanceHandler interface with the NetworkPrefabHandler
 
 </div>
 
@@ -191,13 +186,11 @@ public bool AddHandler(NetworkObject prefabAssetNetworkObject, INetworkPrefabIns
 |----------------|-------------|
 | System.Boolean |             |
 
-### RegisterHostGlobalObjectIdHashValues(GameObject, List\&lt;GameObject&gt;)
+### RegisterHostGlobalObjectIdHashValues(GameObject, List\<GameObject\>)
 
 <div class="markdown level1 summary">
 
-HOST ONLY! Since a host is unique and is considered both a client and a
-server, for each source NetworkPrefab you must manually register all
-potential target overrides that have the NetworkObject component.
+HOST ONLY! Since a host is unique and is considered both a client and a server, for each source NetworkPrefab you must manually register all potential target overrides that have the NetworkObject component.
 
 </div>
 
@@ -216,14 +209,13 @@ public void RegisterHostGlobalObjectIdHashValues(GameObject sourceNetworkPrefab,
 | Type                                          | Name                   | Description                                                                   |
 |-----------------------------------------------|------------------------|-------------------------------------------------------------------------------|
 | GameObject                                    | sourceNetworkPrefab    | source NetworkPrefab to be overridden                                         |
-| System.Collections.Generic.List\&lt;GameObject&gt; | networkPrefabOverrides | one or more NetworkPrefabs could be used to override the source NetworkPrefab |
+| System.Collections.Generic.List\<GameObject\> | networkPrefabOverrides | one or more NetworkPrefabs could be used to override the source NetworkPrefab |
 
 ### RemoveHandler(GameObject)
 
 <div class="markdown level1 summary">
 
-Use the of the overridden network prefab asset to remove a registered
-class that implements the INetworkPrefabInstanceHandler interface.
+Use the of the overridden network prefab asset to remove a registered class that implements the INetworkPrefabInstanceHandler interface.
 
 </div>
 
@@ -253,9 +245,7 @@ public bool RemoveHandler(GameObject networkPrefabAsset)
 
 <div class="markdown level1 summary">
 
-Use the Unity.Netcode.NetworkObject.GlobalObjectIdHash of the overridden
-network prefab asset to remove a registered class that implements the
-INetworkPrefabInstanceHandler interface.
+Use the Unity.Netcode.NetworkObject.GlobalObjectIdHash of the overridden network prefab asset to remove a registered class that implements the INetworkPrefabInstanceHandler interface.
 
 </div>
 
@@ -285,9 +275,7 @@ public bool RemoveHandler(uint globalObjectIdHash)
 
 <div class="markdown level1 summary">
 
-Use the NetworkObject of the overridden network prefab asset to remove a
-registered class that implements the INetworkPrefabInstanceHandler
-interface.
+Use the NetworkObject of the overridden network prefab asset to remove a registered class that implements the INetworkPrefabInstanceHandler interface.
 
 </div>
 

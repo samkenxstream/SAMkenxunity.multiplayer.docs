@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.NetworkVariableBase  
-title: Unity.Netcode.NetworkVariableBase  
+---
+id: Unity.Netcode.NetworkVariableBase
+title: Unity.Netcode.NetworkVariableBase
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:43 pm
 ---
 
 <div class="markdown level0 summary">
@@ -15,7 +17,7 @@ Interface for network value containers
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -45,7 +47,7 @@ System.Dynamic.ExpandoObject
 
 <div classs="implements">
 
-##### Implements
+## Implements
 
 <div>
 
@@ -57,7 +59,13 @@ System.IDisposable
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -68,6 +76,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -89,35 +103,27 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public abstract class NetworkVariableBase : IDisposable
 ```
 
-## 
+## Constructors
 
-### NetworkVariableBase(NetworkVariableReadPermission)
+### NetworkVariableBase(NetworkVariableReadPermission, NetworkVariableWritePermission)
 
 <div class="markdown level1 summary">
+
+The default constructor for NetworkVariableBase that can be used to
+
+create a custom NetworkVariable.
 
 </div>
 
@@ -128,16 +134,65 @@ public abstract class NetworkVariableBase : IDisposable
 #### Declaration
 
 ``` lang-csharp
-protected NetworkVariableBase(NetworkVariableReadPermission readPermIn = NetworkVariableReadPermission.Everyone)
+protected NetworkVariableBase(NetworkVariableReadPermission readPerm = NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission writePerm = NetworkVariableWritePermission.Server)
 ```
 
 #### Parameters
 
-| Type                          | Name       | Description |
-|-------------------------------|------------|-------------|
-| NetworkVariableReadPermission | readPermIn |             |
+| Type                           | Name      | Description                                        |
+|--------------------------------|-----------|----------------------------------------------------|
+| NetworkVariableReadPermission  | readPerm  | the NetworkVariableReadPermission access settings  |
+| NetworkVariableWritePermission | writePerm | the NetworkVariableWritePermission access settings |
 
-## 
+## Fields
+
+### DefaultReadPerm
+
+<div class="markdown level1 summary">
+
+The default read permissions
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const NetworkVariableReadPermission DefaultReadPerm = NetworkVariableReadPermission.Everyone
+```
+
+#### Field Value
+
+| Type                          | Description |
+|-------------------------------|-------------|
+| NetworkVariableReadPermission |             |
+
+### DefaultWritePerm
+
+<div class="markdown level1 summary">
+
+The default write permissions
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const NetworkVariableWritePermission DefaultWritePerm = NetworkVariableWritePermission.Server
+```
+
+#### Field Value
+
+| Type                           | Description |
+|--------------------------------|-------------|
+| NetworkVariableWritePermission |             |
 
 ### ReadPerm
 
@@ -163,13 +218,38 @@ public readonly NetworkVariableReadPermission ReadPerm
 |-------------------------------|-------------|
 | NetworkVariableReadPermission |             |
 
-## 
+### WritePerm
+
+<div class="markdown level1 summary">
+
+The write permission for this var
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public readonly NetworkVariableWritePermission WritePerm
+```
+
+#### Field Value
+
+| Type                           | Description |
+|--------------------------------|-------------|
+| NetworkVariableWritePermission |             |
+
+## Properties
 
 ### Name
 
 <div class="markdown level1 summary">
 
 Gets or sets the name of the network variable's instance (MemberInfo)
+
 where it was declared.
 
 </div>
@@ -190,13 +270,13 @@ public string Name { get; }
 |---------------|-------------|
 | System.String |             |
 
-## 
+## Methods
 
 ### CanClientRead(UInt64)
 
 <div class="markdown level1 summary">
 
-Gets Whether or not a specific client can read to the varaible
+Gets if a specific client has permission to read the var or not
 
 </div>
 
@@ -212,19 +292,51 @@ public bool CanClientRead(ulong clientId)
 
 #### Parameters
 
-| Type          | Name     | Description                       |
-|---------------|----------|-----------------------------------|
-| System.UInt64 | clientId | The clientId of the remote client |
+| Type          | Name     | Description   |
+|---------------|----------|---------------|
+| System.UInt64 | clientId | The client id |
 
 #### Returns
 
-| Type           | Description                                        |
-|----------------|----------------------------------------------------|
-| System.Boolean | Whether or not the client can read to the variable |
+| Type           | Description                                      |
+|----------------|--------------------------------------------------|
+| System.Boolean | Whether or not the client has permission to read |
+
+### CanClientWrite(UInt64)
+
+<div class="markdown level1 summary">
+
+Gets if a specific client has permission to write the var or not
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool CanClientWrite(ulong clientId)
+```
+
+#### Parameters
+
+| Type          | Name     | Description   |
+|---------------|----------|---------------|
+| System.UInt64 | clientId | The client id |
+
+#### Returns
+
+| Type           | Description                                       |
+|----------------|---------------------------------------------------|
+| System.Boolean | Whether or not the client has permission to write |
 
 ### Dispose()
 
 <div class="markdown level1 summary">
+
+Virtual System.IDisposable implementation
 
 </div>
 
@@ -238,9 +350,33 @@ public bool CanClientRead(ulong clientId)
 public virtual void Dispose()
 ```
 
+### GetBehaviour()
+
+<div class="markdown level1 summary">
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public NetworkBehaviour GetBehaviour()
+```
+
+#### Returns
+
+| Type             | Description |
+|------------------|-------------|
+| NetworkBehaviour |             |
+
 ### Initialize(NetworkBehaviour)
 
 <div class="markdown level1 summary">
+
+Initializes the NetworkVariable
 
 </div>
 
@@ -256,9 +392,9 @@ public void Initialize(NetworkBehaviour networkBehaviour)
 
 #### Parameters
 
-| Type             | Name             | Description |
-|------------------|------------------|-------------|
-| NetworkBehaviour | networkBehaviour |             |
+| Type             | Name             | Description                                         |
+|------------------|------------------|-----------------------------------------------------|
+| NetworkBehaviour | networkBehaviour | The NetworkBehaviour the NetworkVariable belongs to |
 
 ### IsDirty()
 
@@ -371,44 +507,16 @@ public virtual void SetDirty(bool isDirty)
 
 #### Parameters
 
-| Type           | Name    | Description |
-|----------------|---------|-------------|
-| System.Boolean | isDirty |             |
-
-### ShouldWrite(UInt64, Boolean)
-
-<div class="markdown level1 summary">
-
-</div>
-
-<div class="markdown level1 conceptual">
-
-</div>
-
-#### Declaration
-
-``` lang-csharp
-public virtual bool ShouldWrite(ulong clientId, bool isServer)
-```
-
-#### Parameters
-
-| Type           | Name     | Description |
-|----------------|----------|-------------|
-| System.UInt64  | clientId |             |
-| System.Boolean | isServer |             |
-
-#### Returns
-
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Name    | Description                     |
+|----------------|---------|---------------------------------|
+| System.Boolean | isDirty | Whether or not the var is dirty |
 
 ### WriteDelta(FastBufferWriter)
 
 <div class="markdown level1 summary">
 
 Writes the dirty changes, that is, the changes since the variable was
+
 last dirty, to the writer
 
 </div>

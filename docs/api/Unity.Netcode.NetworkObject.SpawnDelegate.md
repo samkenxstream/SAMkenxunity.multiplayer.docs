@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.NetworkObject.SpawnDelegate  
-title: Unity.Netcode.NetworkObject.SpawnDelegate  
+---
+id: Unity.Netcode.NetworkObject.SpawnDelegate
+title: Unity.Netcode.NetworkObject.SpawnDelegate
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:42 pm
 ---
 
 <div class="markdown level0 summary">
@@ -13,23 +15,23 @@ Delegate type for checking spawn options
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate bool SpawnDelegate(ulong clientId);
 ```
 
-##### Parameters
+## Parameters
 
 | Type          | Name       | Description                             |
 |---------------|------------|-----------------------------------------|
 | System.UInt64 | \*clientId | The clientId to check spawn options for |
 
-##### Returns
+## Returns
 
 | Type           | Description |
 |----------------|-------------|

@@ -1,12 +1,13 @@
----  
-id: Unity.Netcode.NetworkObjectReference  
-title: Unity.Netcode.NetworkObjectReference  
+---
+id: Unity.Netcode.NetworkObjectReference
+title: Unity.Netcode.NetworkObjectReference
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:48 pm
 ---
 
 <div class="markdown level0 summary">
 
-A helper struct for serializing NetworkObjects over the network. Can be
-used in RPCs and NetworkVariable\&lt;T&gt;.
+A helper struct for serializing NetworkObjects over the network. Can be used in RPCs and NetworkVariable\<T\>.
 
 </div>
 
@@ -16,7 +17,7 @@ used in RPCs and NetworkVariable\&lt;T&gt;.
 
 <div classs="implements">
 
-##### Implements
+## Implements
 
 <div>
 
@@ -26,7 +27,7 @@ INetworkSerializable
 
 <div>
 
-System.IEquatable\&lt;NetworkObjectReference&gt;
+System.IEquatable\<NetworkObjectReference\>
 
 </div>
 
@@ -34,7 +35,7 @@ System.IEquatable\&lt;NetworkObjectReference&gt;
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -50,29 +51,29 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public struct NetworkObjectReference : INetworkSerializable, IEquatable<NetworkObjectReference>
 ```
 
-## 
+## Constructors
 
 ### NetworkObjectReference(GameObject)
 
@@ -136,7 +137,7 @@ public NetworkObjectReference(NetworkObject networkObject)
 | System.ArgumentNullException |           |
 | System.ArgumentException     |           |
 
-## 
+## Properties
 
 ### NetworkObjectId
 
@@ -162,7 +163,7 @@ public ulong NetworkObjectId { get; }
 |---------------|-------------|
 | System.UInt64 |             |
 
-## 
+## Methods
 
 ### Equals(Object)
 
@@ -258,12 +259,9 @@ System.ValueType.GetHashCode()
 
 </div>
 
-### NetworkSerialize\&lt;T&gt;(BufferSerializer\&lt;T&gt;)
+### NetworkSerialize\<T\>(BufferSerializer\<T\>)
 
 <div class="markdown level1 summary">
-
-Provides bi-directional serialization to read and write the desired data
-to serialize this type.
 
 </div>
 
@@ -275,20 +273,21 @@ to serialize this type.
 
 ``` lang-csharp
 public void NetworkSerialize<T>(BufferSerializer<T> serializer)
+
     where T : IReaderWriter
 ```
 
 #### Parameters
 
-| Type                 | Name       | Description                                       |
-|----------------------|------------|---------------------------------------------------|
-| BufferSerializer\&lt;T&gt; | serializer | The serializer to use to read and write the data. |
+| Type                  | Name       | Description |
+|-----------------------|------------|-------------|
+| BufferSerializer\<T\> | serializer |             |
 
 #### Type Parameters
 
-| Name | Description                                                                                                              |
-|------|--------------------------------------------------------------------------------------------------------------------------|
-| T    | Either BufferSerializerReader or BufferSerializerWriter, depending whether the serializer is in read mode or write mode. |
+| Name | Description |
+|------|-------------|
+| T    |             |
 
 ### TryGet(out NetworkObject, NetworkManager)
 
@@ -321,11 +320,13 @@ public bool TryGet(out NetworkObject networkObject, NetworkManager networkManage
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | System.Boolean | True if the NetworkObject was found; False if the NetworkObject was not found. This can happen if the NetworkObject has not been spawned yet. you can try getting the reference at a later point in time. |
 
-## 
+## Operators
 
-### Implicit(GameObject to NetworkObjectReference)
+### Implicit(GameObject To NetworkObjectReference)
 
 <div class="markdown level1 summary">
+
+Implicitly convert to NetworkObject.
 
 </div>
 
@@ -341,19 +342,21 @@ public static implicit operator NetworkObjectReference(GameObject gameObject)
 
 #### Parameters
 
-| Type       | Name       | Description |
-|------------|------------|-------------|
-| GameObject | gameObject |             |
+| Type       | Name       | Description          |
+|------------|------------|----------------------|
+| GameObject | gameObject | The to convert from. |
 
 #### Returns
 
-| Type                   | Description |
-|------------------------|-------------|
-| NetworkObjectReference |             |
+| Type                   | Description                                                                                             |
+|------------------------|---------------------------------------------------------------------------------------------------------|
+| NetworkObjectReference | The NetworkObjectReference created from the parameter that has a NetworkObject component attached to it |
 
-### Implicit(NetworkObject to NetworkObjectReference)
+### Implicit(NetworkObject To NetworkObjectReference)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkObject to NetworkObjectReference.
 
 </div>
 
@@ -369,19 +372,21 @@ public static implicit operator NetworkObjectReference(NetworkObject networkObje
 
 #### Parameters
 
-| Type          | Name          | Description |
-|---------------|---------------|-------------|
-| NetworkObject | networkObject |             |
+| Type          | Name          | Description                        |
+|---------------|---------------|------------------------------------|
+| NetworkObject | networkObject | The NetworkObject to convert from. |
 
 #### Returns
 
-| Type                   | Description |
-|------------------------|-------------|
-| NetworkObjectReference |             |
+| Type                   | Description                                                         |
+|------------------------|---------------------------------------------------------------------|
+| NetworkObjectReference | The NetworkObjectReference created from the NetworkObject parameter |
 
-### Implicit(NetworkObjectReference to GameObject)
+### Implicit(NetworkObjectReference To GameObject)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkObjectReference to .
 
 </div>
 
@@ -397,19 +402,21 @@ public static implicit operator GameObject(NetworkObjectReference networkObjectR
 
 #### Parameters
 
-| Type                   | Name             | Description |
-|------------------------|------------------|-------------|
-| NetworkObjectReference | networkObjectRef |             |
+| Type                   | Name             | Description                                 |
+|------------------------|------------------|---------------------------------------------|
+| NetworkObjectReference | networkObjectRef | The NetworkObjectReference to convert from. |
 
 #### Returns
 
-| Type       | Description |
-|------------|-------------|
-| GameObject |             |
+| Type       | Description                                                                                                                     |
+|------------|---------------------------------------------------------------------------------------------------------------------------------|
+| GameObject | This returns the that the NetworkObject is attached to and is referenced by the NetworkObjectReference passed in as a parameter |
 
-### Implicit(NetworkObjectReference to NetworkObject)
+### Implicit(NetworkObjectReference To NetworkObject)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkObjectReference to NetworkObject.
 
 </div>
 
@@ -425,15 +432,15 @@ public static implicit operator NetworkObject(NetworkObjectReference networkObje
 
 #### Parameters
 
-| Type                   | Name             | Description |
-|------------------------|------------------|-------------|
-| NetworkObjectReference | networkObjectRef |             |
+| Type                   | Name             | Description                                 |
+|------------------------|------------------|---------------------------------------------|
+| NetworkObjectReference | networkObjectRef | The NetworkObjectReference to convert from. |
 
 #### Returns
 
-| Type          | Description |
-|---------------|-------------|
-| NetworkObject |             |
+| Type          | Description                                                 |
+|---------------|-------------------------------------------------------------|
+| NetworkObject | The NetworkObject the NetworkObjectReference is referencing |
 
 ### Implements
 
@@ -445,6 +452,6 @@ INetworkSerializable
 
 <div>
 
-System.IEquatable\&lt;T&gt;
+System.IEquatable\<T\>
 
 </div>

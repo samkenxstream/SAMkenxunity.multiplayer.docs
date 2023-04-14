@@ -1,9 +1,13 @@
----  
-id: Unity.Netcode.NetworkTransport  
-title: Unity.Netcode.NetworkTransport  
+---
+id: Unity.Netcode.NetworkTransport
+title: Unity.Netcode.NetworkTransport
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:32 pm
 ---
 
 <div class="markdown level0 summary">
+
+The generic transport class all Netcode for GameObjects network transport implementations derive from. Use this class to add a custom transport. for an example of how a transport is integrated
 
 </div>
 
@@ -13,7 +17,7 @@ title: Unity.Netcode.NetworkTransport
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -35,24 +39,23 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public abstract class NetworkTransport : MonoBehaviour
 ```
 
-## 
+## Properties
 
 ### IsSupported
 
 <div class="markdown level1 summary">
 
-Gets a value indicating whether this NetworkTransport is supported in
-the current runtime context This is used by multiplex adapters
+Gets a value indicating whether this NetworkTransport is supported in the current runtime context This is used by multiplex adapters
 
 </div>
 
@@ -76,9 +79,7 @@ public virtual bool IsSupported { get; }
 
 <div class="markdown level1 summary">
 
-A constant `clientId` that represents the server When this value is
-found in methods such as `Send`, it should be treated as a placeholder
-that means "the server"
+A constant `clientId` that represents the server When this value is found in methods such as `Send`, it should be treated as a placeholder that means "the server"
 
 </div>
 
@@ -98,7 +99,7 @@ public abstract ulong ServerClientId { get; }
 |---------------|-------------|
 | System.UInt64 |             |
 
-## 
+## Methods
 
 ### DisconnectLocalClient()
 
@@ -172,7 +173,7 @@ public abstract ulong GetCurrentRtt(ulong clientId)
 |---------------|---------------------------------------------|
 | System.UInt64 | Returns the round trip time in milliseconds |
 
-### Initialize()
+### Initialize(NetworkManager)
 
 <div class="markdown level1 summary">
 
@@ -187,14 +188,21 @@ Initializes the transport
 #### Declaration
 
 ``` lang-csharp
-public abstract void Initialize()
+public abstract void Initialize(NetworkManager networkManager = null)
 ```
 
-### InvokeOnTransportEvent(NetworkEvent, UInt64, ArraySegment\&lt;Byte&gt;, Single)
+#### Parameters
+
+| Type           | Name           | Description                       |
+|----------------|----------------|-----------------------------------|
+| NetworkManager | networkManager | optionally pass in NetworkManager |
+
+### InvokeOnTransportEvent(NetworkEvent, UInt64, ArraySegment\<Byte\>, Single)
 
 <div class="markdown level1 summary">
 
 Invokes the OnTransportEvent. Invokation has to occur on the Unity
+
 thread in the Update loop.
 
 </div>
@@ -215,14 +223,15 @@ protected void InvokeOnTransportEvent(NetworkEvent eventType, ulong clientId, Ar
 |------------------------------------|-------------|----------------------------------------------------------------------------|
 | NetworkEvent                       | eventType   | The event type                                                             |
 | System.UInt64                      | clientId    | The clientId this event is for                                             |
-| System.ArraySegment\&lt;System.Byte&gt; | payload     | The incoming data payload                                                  |
+| System.ArraySegment\<System.Byte\> | payload     | The incoming data payload                                                  |
 | System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
-### PollEvent(out UInt64, out ArraySegment\&lt;Byte&gt;, out Single)
+### PollEvent(out UInt64, Out ArraySegment\<Byte\>, out Single)
 
 <div class="markdown level1 summary">
 
 Polls for incoming events, with an extra output parameter to report the
+
 precise time the event was received.
 
 </div>
@@ -242,7 +251,7 @@ public abstract NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte
 | Type                               | Name        | Description                                                                |
 |------------------------------------|-------------|----------------------------------------------------------------------------|
 | System.UInt64                      | clientId    | The clientId this event is for                                             |
-| System.ArraySegment\&lt;System.Byte&gt; | payload     | The incoming data payload                                                  |
+| System.ArraySegment\<System.Byte\> | payload     | The incoming data payload                                                  |
 | System.Single                      | receiveTime | The time the event was received, as reported by Time.realtimeSinceStartup. |
 
 #### Returns
@@ -251,11 +260,11 @@ public abstract NetworkEvent PollEvent(out ulong clientId, out ArraySegment<byte
 |--------------|------------------------|
 | NetworkEvent | Returns the event type |
 
-### Send(UInt64, ArraySegment\&lt;Byte&gt; NetworkDelivery)
+### Send(UInt64, ArraySegment\<Byte\>, NetworkDelivery)
 
 <div class="markdown level1 summary">
 
-Send a payload to the specified clientId, data and channelName.
+Send a payload to the specified clientId, data and networkDelivery.
 
 </div>
 
@@ -274,7 +283,7 @@ public abstract void Send(ulong clientId, ArraySegment<byte> payload, NetworkDel
 | Type                               | Name            | Description                               |
 |------------------------------------|-----------------|-------------------------------------------|
 | System.UInt64                      | clientId        | The clientId to send to                   |
-| System.ArraySegment\&lt;System.Byte&gt; | payload         | The data to send                          |
+| System.ArraySegment\<System.Byte\> | payload         | The data to send                          |
 | NetworkDelivery                    | networkDelivery | The delivery type (QoS) to send data with |
 
 ### Shutdown()
@@ -315,9 +324,9 @@ public abstract bool StartClient()
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                |
+|----------------|----------------------------|
+| System.Boolean | Returns success or failure |
 
 ### StartServer()
 
@@ -339,20 +348,17 @@ public abstract bool StartServer()
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                |
+|----------------|----------------------------|
+| System.Boolean | Returns success or failure |
 
-## 
+## Events
 
 ### OnTransportEvent
 
 <div class="markdown level1 summary">
 
-Occurs when the transport has a new transport network event. Can be used
-to make an event based transport instead of a poll based. Invocation has
-to occur on the Unity thread in the Update loop.
-
+Occurs when the transport has a new transport network event. Can be used to make an event based transport instead of a poll based. Invocation has to occur on the Unity thread in the Update loop.
 </div>
 
 <div class="markdown level1 conceptual">

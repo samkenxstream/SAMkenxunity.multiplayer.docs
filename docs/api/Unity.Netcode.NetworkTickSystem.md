@@ -1,9 +1,13 @@
----  
-id: Unity.Netcode.NetworkTickSystem  
-title: Unity.Netcode.NetworkTickSystem  
+---
+id: Unity.Netcode.NetworkTickSystem
+title: Unity.Netcode.NetworkTickSystem
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:28 pm
 ---
 
 <div class="markdown level0 summary">
+
+Provides discretized time. This is useful for games that require ticks happening at regular interval on the server and clients.
 
 </div>
 
@@ -13,7 +17,7 @@ title: Unity.Netcode.NetworkTickSystem
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -31,7 +35,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -42,6 +52,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -63,31 +79,19 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public class NetworkTickSystem
 ```
 
-## 
+## Constructors
 
 ### NetworkTickSystem(UInt32, Double, Double)
 
@@ -115,7 +119,7 @@ public NetworkTickSystem(uint tickRate, double localTimeSec, double serverTimeSe
 | System.Double | localTimeSec  | The initial local time to start at.  |
 | System.Double | serverTimeSec | The initial server time to start at. |
 
-## 
+## Fields
 
 ### NoTick
 
@@ -141,15 +145,13 @@ public const int NoTick = -2147483648
 |--------------|-------------|
 | System.Int32 |             |
 
-## 
+## Properties
 
 ### LocalTime
 
 <div class="markdown level1 summary">
 
-The current local time. This is the time at which predicted or client
-authoritative objects move. This value is accurate when called in Update
-or during the Tick event but does not work correctly for FixedUpdate.
+The current local time. This is the time at which predicted or client authoritative objects move. This value is accurate when called in Update or during the Tick event but does not work correctly for FixedUpdate.
 
 </div>
 
@@ -173,10 +175,7 @@ public NetworkTime LocalTime { get; }
 
 <div class="markdown level1 summary">
 
-The current server time. This value is mostly used for internal purposes
-and to interpolate state received from the server. This value is
-accurate when called in Update or during the Tick event but does not
-work correctly for FixedUpdate.
+The current server time. This value is mostly used for internal purposes and to interpolate state received from the server. This value is accurate when called in Update or during the Tick event but does not work correctly for FixedUpdate.
 
 </div>
 
@@ -200,8 +199,7 @@ public NetworkTime ServerTime { get; }
 
 <div class="markdown level1 summary">
 
-The TickRate of the tick system. This is used to decide how often a
-fixed network tick is run.
+The TickRate of the tick system. This is used to decide how often a fixed network tick is run.
 
 </div>
 
@@ -221,7 +219,7 @@ public uint TickRate { get; }
 |---------------|-------------|
 | System.UInt32 |             |
 
-## 
+## Methods
 
 ### Reset(Double, Double)
 
@@ -252,8 +250,7 @@ public void Reset(double localTimeSec, double serverTimeSec)
 
 <div class="markdown level1 summary">
 
-Called after advancing the time system to run ticks based on the
-difference in time.
+Called after advancing the time system to run ticks based on the difference in time.
 
 </div>
 
@@ -269,12 +266,12 @@ public void UpdateTick(double localTimeSec, double serverTimeSec)
 
 #### Parameters
 
-| Type          | Name          | Description |
-|---------------|---------------|-------------|
-| System.Double | localTimeSec  |             |
-| System.Double | serverTimeSec |             |
+| Type          | Name          | Description                |
+|---------------|---------------|----------------------------|
+| System.Double | localTimeSec  | The local time in seconds  |
+| System.Double | serverTimeSec | The server time in seconds |
 
-## 
+## Events
 
 ### Tick
 

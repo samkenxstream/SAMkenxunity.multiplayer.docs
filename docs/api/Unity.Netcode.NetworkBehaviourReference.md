@@ -1,14 +1,13 @@
----  
-id: Unity.Netcode.NetworkBehaviourReference  
-title: Unity.Netcode.NetworkBehaviourReference  
+---
+id: Unity.Netcode.NetworkBehaviourReference
+title: Unity.Netcode.NetworkBehaviourReference
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:13 pm
 ---
 
 <div class="markdown level0 summary">
 
-A helper struct for serializing NetworkBehaviours over the network. Can
-be used in RPCs and NetworkVariable\&lt;T&gt;. Note: network ids get recycled
-by the NetworkManager after a while. So a reference pointing to
-
+A helper struct for serializing NetworkBehaviours over the network. Can be used in RPCs and NetworkVariable\<T\>. Note: network ids get recycled by the NetworkManager after a while. So a reference pointing to
 </div>
 
 <div class="markdown level0 conceptual">
@@ -17,7 +16,7 @@ by the NetworkManager after a while. So a reference pointing to
 
 <div classs="implements">
 
-##### Implements
+## Implements
 
 <div>
 
@@ -27,7 +26,7 @@ INetworkSerializable
 
 <div>
 
-System.IEquatable\&lt;NetworkBehaviourReference&gt;
+System.IEquatable\<NetworkBehaviourReference\>
 
 </div>
 
@@ -35,7 +34,7 @@ System.IEquatable\&lt;NetworkBehaviourReference&gt;
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -51,29 +50,29 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public struct NetworkBehaviourReference : INetworkSerializable, IEquatable<NetworkBehaviourReference>
 ```
 
-## 
+## Constructors
 
 ### NetworkBehaviourReference(NetworkBehaviour)
 
@@ -105,7 +104,7 @@ public NetworkBehaviourReference(NetworkBehaviour networkBehaviour)
 |--------------------------|-----------|
 | System.ArgumentException |           |
 
-## 
+## Methods
 
 ### Equals(Object)
 
@@ -201,12 +200,9 @@ System.ValueType.GetHashCode()
 
 </div>
 
-### NetworkSerialize\&lt;T&gt;(BufferSerializer\&lt;T&gt;)
+### NetworkSerialize\<T\>(BufferSerializer\<T\>)
 
 <div class="markdown level1 summary">
-
-Provides bi-directional serialization to read and write the desired data
-to serialize this type.
 
 </div>
 
@@ -218,20 +214,21 @@ to serialize this type.
 
 ``` lang-csharp
 public void NetworkSerialize<T>(BufferSerializer<T> serializer)
+
     where T : IReaderWriter
 ```
 
 #### Parameters
 
-| Type                 | Name       | Description                                       |
-|----------------------|------------|---------------------------------------------------|
-| BufferSerializer\&lt;T&gt; | serializer | The serializer to use to read and write the data. |
+| Type                  | Name       | Description |
+|-----------------------|------------|-------------|
+| BufferSerializer\<T\> | serializer |             |
 
 #### Type Parameters
 
-| Name | Description                                                                                                              |
-|------|--------------------------------------------------------------------------------------------------------------------------|
-| T    | Either BufferSerializerReader or BufferSerializerWriter, depending whether the serializer is in read mode or write mode. |
+| Name | Description |
+|------|-------------|
+| T    |             |
 
 ### TryGet(out NetworkBehaviour, NetworkManager)
 
@@ -264,7 +261,7 @@ public bool TryGet(out NetworkBehaviour networkBehaviour, NetworkManager network
 |----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | System.Boolean | True if the NetworkBehaviour was found; False if the NetworkBehaviour was not found. This can happen if the corresponding NetworkObject has not been spawned yet. you can try getting the reference at a later point in time. |
 
-### TryGet\&lt;T&gt;(out T, NetworkManager)
+### TryGet\<T\>(out T, NetworkManager)
 
 <div class="markdown level1 summary">
 
@@ -280,6 +277,7 @@ Tries to get the NetworkBehaviour referenced by this reference.
 
 ``` lang-csharp
 public bool TryGet<T>(out T networkBehaviour, NetworkManager networkManager = null)
+
     where T : NetworkBehaviour
 ```
 
@@ -302,11 +300,13 @@ public bool TryGet<T>(out T networkBehaviour, NetworkManager networkManager = nu
 |------|---------------------------------------------------|
 | T    | The type of the networkBehaviour for convenience. |
 
-## 
+## Operators
 
-### Implicit(NetworkBehaviour to NetworkBehaviourReference)
+### Implicit(NetworkBehaviour To NetworkBehaviourReference)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkBehaviour to NetworkBehaviourReference.
 
 </div>
 
@@ -322,19 +322,21 @@ public static implicit operator NetworkBehaviourReference(NetworkBehaviour netwo
 
 #### Parameters
 
-| Type             | Name             | Description |
-|------------------|------------------|-------------|
-| NetworkBehaviour | networkBehaviour |             |
+| Type             | Name             | Description                           |
+|------------------|------------------|---------------------------------------|
+| NetworkBehaviour | networkBehaviour | The NetworkBehaviour to convert from. |
 
 #### Returns
 
-| Type                      | Description |
-|---------------------------|-------------|
-| NetworkBehaviourReference |             |
+| Type                      | Description                                                                              |
+|---------------------------|------------------------------------------------------------------------------------------|
+| NetworkBehaviourReference | The NetworkBehaviourReference created from the NetworkBehaviour passed in as a parameter |
 
-### Implicit(NetworkBehaviourReference to NetworkBehaviour)
+### Implicit(NetworkBehaviourReference To NetworkBehaviour)
 
 <div class="markdown level1 summary">
+
+Implicitly convert NetworkBehaviourReference to NetworkBehaviour.
 
 </div>
 
@@ -350,15 +352,15 @@ public static implicit operator NetworkBehaviour(NetworkBehaviourReference netwo
 
 #### Parameters
 
-| Type                      | Name                | Description |
-|---------------------------|---------------------|-------------|
-| NetworkBehaviourReference | networkBehaviourRef |             |
+| Type                      | Name                | Description                                    |
+|---------------------------|---------------------|------------------------------------------------|
+| NetworkBehaviourReference | networkBehaviourRef | The NetworkBehaviourReference to convert from. |
 
 #### Returns
 
-| Type             | Description |
-|------------------|-------------|
-| NetworkBehaviour |             |
+| Type             | Description                                               |
+|------------------|-----------------------------------------------------------|
+| NetworkBehaviour | The NetworkBehaviour this class is holding a reference to |
 
 ### Implements
 
@@ -370,6 +372,6 @@ INetworkSerializable
 
 <div>
 
-System.IEquatable\&lt;T&gt;
+System.IEquatable\<T\>
 
 </div>

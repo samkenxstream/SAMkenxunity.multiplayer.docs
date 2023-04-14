@@ -1,9 +1,15 @@
----  
-id: Unity.Netcode.BitCounter  
+---
+id: Unity.Netcode.BitCounter
 title: Unity.Netcode.BitCounter
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:33:51 pm
 ---
 
 <div class="markdown level0 summary">
+
+Utility class to count the number of bytes or bits needed to serialize a
+
+value.
 
 </div>
 
@@ -13,7 +19,7 @@ title: Unity.Netcode.BitCounter
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -31,7 +37,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -42,6 +54,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -63,31 +81,19 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public static class BitCounter
 ```
 
-## 
+## Methods
 
 ### GetUsedBitCount(UInt32)
 

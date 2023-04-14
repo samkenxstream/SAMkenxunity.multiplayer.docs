@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.NetworkObject  
-title: Unity.Netcode.NetworkObject  
+---
+id: Unity.Netcode.NetworkObject
+title: Unity.Netcode.NetworkObject
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:40 pm
 ---
 
 <div class="markdown level0 summary">
@@ -15,7 +17,7 @@ A component used to identify that a GameObject in the network
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -31,24 +33,22 @@ System.Dynamic.ExpandoObject
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public sealed class NetworkObject : MonoBehaviour
 ```
 
-## 
+## Fields
 
 ### AlwaysReplicateAsRoot
 
 <div class="markdown level1 summary">
-
-If true, the object will always be replicated as root on clients and the
-parent will be ignored.
+If true, the object will always be replicated as root on clients and the parent will be ignored.
 
 </div>
 
@@ -96,9 +96,7 @@ public bool AutoObjectParentSync
 
 <div class="markdown level1 summary">
 
-Delegate invoked when the netcode needs to know if the object should be
-visible to a client, if null it will assume true
-
+Delegate invoked when the netcode needs to know if the object should be visible to a client, if null it will assume true
 </div>
 
 <div class="markdown level1 conceptual">
@@ -121,8 +119,7 @@ public NetworkObject.VisibilityDelegate CheckObjectVisibility
 
 <div class="markdown level1 summary">
 
-Whether or not to destroy this object if it's owner is destroyed. If
-false, the objects ownership will be given to the server.
+Whether or not to destroy this object if it's owner is destroyed. If true, the objects ownership will be given to the server.
 
 </div>
 
@@ -167,14 +164,13 @@ public NetworkObject.SpawnDelegate IncludeTransformWhenSpawning
 |-----------------------------|-------------|
 | NetworkObject.SpawnDelegate |             |
 
-## 
+## Properties
 
 ### DestroyWithScene
 
 <div class="markdown level1 summary">
 
-Gets whether or not the object should be automatically removed when the
-scene is unloaded.
+Gets whether or not the object should be automatically removed when the scene is unloaded.
 
 </div>
 
@@ -198,7 +194,7 @@ public bool DestroyWithScene { get; set; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is the the personal clients player object
+Gets if the object is the personal clients player object
 
 </div>
 
@@ -246,8 +242,7 @@ public bool IsOwnedByServer { get; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is owned by the local player or if the object is the
-local player object
+Gets if the object is owned by the local player or if the object is the local player object
 
 </div>
 
@@ -295,8 +290,7 @@ public bool IsPlayerObject { get; }
 
 <div class="markdown level1 summary">
 
-Gets if the object is a SceneObject, null if it's not yet spawned but is
-a scene object.
+Gets if the object is a SceneObject, null if it's not yet spawned but is a scene object.
 
 </div>
 
@@ -412,7 +406,7 @@ public ulong OwnerClientId { get; }
 |---------------|-------------|
 | System.UInt64 |             |
 
-## 
+## Methods
 
 ### ChangeOwnership(UInt64)
 
@@ -442,8 +436,7 @@ public void ChangeOwnership(ulong newOwnerClientId)
 
 <div class="markdown level1 summary">
 
-Despawns the of this NetworkObject and sends a destroy message for it to
-all connected clients.
+Despawns the of this NetworkObject and sends a destroy message for it to all connected clients.
 
 </div>
 
@@ -517,11 +510,11 @@ public bool IsNetworkVisibleTo(ulong clientId)
 |----------------|-------------------------------------------|
 | System.Boolean | True if the client knows about the object |
 
-### NetworkHide(List\&lt;NetworkObject&gt;, UInt64)
+### NetworkHide(List\<NetworkObject\>, UInt64)
 
 <div class="markdown level1 summary">
 
-Hides a list of objects from a client
+Hides a list of NetworkObjects from the targeted client.
 
 </div>
 
@@ -537,16 +530,41 @@ public static void NetworkHide(List<NetworkObject> networkObjects, ulong clientI
 
 #### Parameters
 
-| Type                                             | Name           | Description                         |
-|--------------------------------------------------|----------------|-------------------------------------|
-| System.Collections.Generic.List\&lt;NetworkObject&gt;| networkObjects | The objects to hide                 |
-| System.UInt64                                    | clientId       | The client to hide the objects from |
+| Type                                             | Name           | Description                                                                    |
+|--------------------------------------------------|----------------|--------------------------------------------------------------------------------|
+| System.Collections.Generic.List\<NetworkObject\> | networkObjects | The NetworkObjects that will become "netcode invisible" to the targeted client |
+| System.UInt64                                    | clientId       | The targeted client                                                            |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Usage: Use to stop sending updates to the targeted client, "netcode
+
+invisible", for the currently visible NetworkObjects.
+
+
+
+Dynamically Spawned: NetworkObjects will be despawned and destroyed on
+
+the targeted client's side.
+In-Scene Placed: NetworkObjects will only be despawned on the targeted
+
+client's side.
+
+
+
+See Also:
+NetworkHide(UInt64)
+NetworkShow(UInt64) or NetworkShow(List\<NetworkObject\>, UInt64)
+
+</div>
 
 ### NetworkHide(UInt64)
 
 <div class="markdown level1 summary">
 
-Hides a object from a specific client
+Hides the NetworkObject from the targeted client.
 
 </div>
 
@@ -562,15 +580,35 @@ public void NetworkHide(ulong clientId)
 
 #### Parameters
 
-| Type          | Name     | Description                       |
-|---------------|----------|-----------------------------------|
-| System.UInt64 | clientId | The client to hide the object for |
+| Type          | Name     | Description         |
+|---------------|----------|---------------------|
+| System.UInt64 | clientId | The targeted client |
 
-### NetworkShow(List\&lt;NetworkObject&gt;, UInt64)
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Usage: Use to stop sending updates to the targeted client, "netcode
+
+invisible", for a currently visible NetworkObject.
+
+
+
+Dynamically Spawned: NetworkObjects will be despawned and destroyed on the targeted client's side. In-Scene Placed: NetworkObjects will only be despawned on the targeted client's side.
+
+
+
+See Also:
+NetworkHide(List\<NetworkObject\>, UInt64)
+NetworkShow(UInt64) or NetworkShow(List\<NetworkObject\>, UInt64)
+
+</div>
+
+### NetworkShow(List\<NetworkObject\>, UInt64)
 
 <div class="markdown level1 summary">
 
-Shows a list of previously hidden NetworkObjects to a client
+Makes a list of previously hidden NetworkObjects "netcode visible" for the client specified.
 
 </div>
 
@@ -586,16 +624,34 @@ public static void NetworkShow(List<NetworkObject> networkObjects, ulong clientI
 
 #### Parameters
 
-| Type                                             | Name           | Description                       |
-|--------------------------------------------------|----------------|-----------------------------------|
-| System.Collections.Generic.List\&lt;NetworkObject&gt; | networkObjects | The NetworkObjects to show        |
-| System.UInt64                                    | clientId       | The client to show the objects to |
+| Type                                             | Name           | Description                                                    |
+|--------------------------------------------------|----------------|----------------------------------------------------------------|
+| System.Collections.Generic.List\<NetworkObject\> | networkObjects | The objects to become "netcode visible" to the targeted client |
+| System.UInt64                                    | clientId       | The targeted client                                            |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Usage: Use to start sending updates for previously hidden NetworkObjects to the targeted client.
+
+
+
+Dynamically Spawned: NetworkObjects will be instantiated and spawned on the targeted client's side. In-Scene Placed: Already instantiated but despawned NetworkObjects will be spawned on the targeted client's side.
+
+
+
+See Also:
+NetworkShow(UInt64)
+NetworkHide(UInt64) or NetworkHide(List\<NetworkObject\>, UInt64)
+
+</div>
 
 ### NetworkShow(UInt64)
 
 <div class="markdown level1 summary">
 
-Shows a previously hidden NetworkObject to a client
+Makes the previously hidden NetworkObject "netcode visible" to the targeted client.
 
 </div>
 
@@ -611,16 +667,33 @@ public void NetworkShow(ulong clientId)
 
 #### Parameters
 
-| Type          | Name     | Description                             |
-|---------------|----------|-----------------------------------------|
-| System.UInt64 | clientId | The client to show the NetworkObject to |
+| Type          | Name     | Description         |
+|---------------|----------|---------------------|
+| System.UInt64 | clientId | The targeted client |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+
+Usage: Use to start sending updates for a previously hidden NetworkObject to the targeted client.
+
+
+
+Dynamically Spawned: NetworkObjects will be instantiated and spawned on the targeted client side. In-Scene Placed: The instantiated but despawned NetworkObjects will be spawned on the targeted client side.
+
+
+
+See Also:
+NetworkShow(UInt64)
+NetworkHide(UInt64) or NetworkHide(List\<NetworkObject\>, UInt64)
+
+</div>
 
 ### RemoveOwnership()
 
 <div class="markdown level1 summary">
 
-Removes all ownership of an object from any client. Can only be called
-from server
+Removes all ownership of an object from any client. Can only be called from server
 
 </div>
 
@@ -638,8 +711,7 @@ public void RemoveOwnership()
 
 <div class="markdown level1 summary">
 
-Spawns this NetworkObject across the network. Can only be called from
-the Server
+Spawns this NetworkObject across the network. Can only be called from the Server
 
 </div>
 
@@ -663,8 +735,7 @@ public void Spawn(bool destroyWithScene = false)
 
 <div class="markdown level1 summary">
 
-Spawns a NetworkObject across the network and makes it the player object
-for the given client
+Spawns a NetworkObject across the network and makes it the player object for the given client
 
 </div>
 
@@ -680,17 +751,16 @@ public void SpawnAsPlayerObject(ulong clientId, bool destroyWithScene = false)
 
 #### Parameters
 
-| Type           | Name             | Description                                             |
-|----------------|------------------|---------------------------------------------------------|
-| System.UInt64  | clientId         | The clientId whos player object this is                 |
-| System.Boolean | destroyWithScene | Should the object be destroyd when the scene is changed |
+| Type           | Name             | Description                                              |
+|----------------|------------------|----------------------------------------------------------|
+| System.UInt64  | clientId         | The clientId who's player object this is                 |
+| System.Boolean | destroyWithScene | Should the object be destroyed when the scene is changed |
 
 ### SpawnWithOwnership(UInt64, Boolean)
 
 <div class="markdown level1 summary">
 
-Spawns a NetworkObject across the network with a given owner. Can only
-be called from server
+Spawns a NetworkObject across the network with a given owner. Can only be called from server
 
 </div>
 
@@ -711,9 +781,48 @@ public void SpawnWithOwnership(ulong clientId, bool destroyWithScene = false)
 | System.UInt64  | clientId         | The clientId to own the object                           |
 | System.Boolean | destroyWithScene | Should the object be destroyed when the scene is changed |
 
+### TryRemoveParent(Boolean)
+
+<div class="markdown level1 summary">
+
+Removes the parent of the NetworkObject's transform
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public bool TryRemoveParent(bool worldPositionStays = true)
+```
+
+#### Parameters
+
+| Type           | Name               | Description                                                                                                                                                    |
+|----------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System.Boolean | worldPositionStays | If true, the parent-relative position, scale and rotation are modified such that the object keeps the same world space position, rotation and scale as before. |
+
+#### Returns
+
+| Type           | Description |
+|----------------|-------------|
+| System.Boolean |             |
+
+#### Remarks
+
+<div class="markdown level1 remarks">
+This is a more convenient way to remove the parent without having to cast the null value to either or NetworkObject
+
+</div>
+
 ### TrySetParent(GameObject, Boolean)
 
 <div class="markdown level1 summary">
+
+Set the parent of the NetworkObject transform.
 
 </div>
 
@@ -729,20 +838,22 @@ public bool TrySetParent(GameObject parent, bool worldPositionStays = true)
 
 #### Parameters
 
-| Type           | Name               | Description |
-|----------------|--------------------|-------------|
-| GameObject     | parent             |             |
-| System.Boolean | worldPositionStays |             |
+| Type           | Name               | Description                                                                                                                                                    |
+|----------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| GameObject     | parent             | The new parent for this NetworkObject transform will be the child of.                                                                                          |
+| System.Boolean | worldPositionStays | If true, the parent-relative position, scale and rotation are modified such that the object keeps the same world space position, rotation and scale as before. |
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                |
+|----------------|--------------------------------------------|
+| System.Boolean | Whether or not reparenting was successful. |
 
 ### TrySetParent(Transform, Boolean)
 
 <div class="markdown level1 summary">
+
+Set the parent of the NetworkObject transform.
 
 </div>
 
@@ -758,20 +869,22 @@ public bool TrySetParent(Transform parent, bool worldPositionStays = true)
 
 #### Parameters
 
-| Type           | Name               | Description |
-|----------------|--------------------|-------------|
-| Transform      | parent             |             |
-| System.Boolean | worldPositionStays |             |
+| Type           | Name               | Description                                                                                                                                                    |
+|----------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Transform      | parent             | The new parent for this NetworkObject transform will be the child of.                                                                                          |
+| System.Boolean | worldPositionStays | If true, the parent-relative position, scale and rotation are modified such that the object keeps the same world space position, rotation and scale as before. |
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                |
+|----------------|--------------------------------------------|
+| System.Boolean | Whether or not reparenting was successful. |
 
 ### TrySetParent(NetworkObject, Boolean)
 
 <div class="markdown level1 summary">
+
+Set the parent of the NetworkObject transform.
 
 </div>
 
@@ -787,13 +900,13 @@ public bool TrySetParent(NetworkObject parent, bool worldPositionStays = true)
 
 #### Parameters
 
-| Type           | Name               | Description |
-|----------------|--------------------|-------------|
-| NetworkObject  | parent             |             |
-| System.Boolean | worldPositionStays |             |
+| Type           | Name               | Description                                                                                                                                                    |
+|----------------|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| NetworkObject  | parent             | The new parent for this NetworkObject transform will be the child of.                                                                                          |
+| System.Boolean | worldPositionStays | If true, the parent-relative position, scale and rotation are modified such that the object keeps the same world space position, rotation and scale as before. |
 
 #### Returns
 
-| Type           | Description |
-|----------------|-------------|
-| System.Boolean |             |
+| Type           | Description                                |
+|----------------|--------------------------------------------|
+| System.Boolean | Whether or not reparenting was successful. |

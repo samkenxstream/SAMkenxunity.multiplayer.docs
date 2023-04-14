@@ -1,13 +1,15 @@
----  
-id: Unity.Netcode.NetworkSceneManager.SceneEventDelegate  
-title: Unity.Netcode.NetworkSceneManager.SceneEventDelegate  
+---
+id: Unity.Netcode.NetworkSceneManager.SceneEventDelegate
+title: Unity.Netcode.NetworkSceneManager.SceneEventDelegate
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:21 pm
 ---
 
 <div class="markdown level0 summary">
 
-The delegate callback definition for scene event notifications.  
-See also:  
-SceneEvent  
+The delegate callback definition for scene event notifications.
+See also:
+SceneEvent
 Unity.Netcode.SceneEventData
 
 </div>
@@ -16,17 +18,17 @@ Unity.Netcode.SceneEventData
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate void SceneEventDelegate(SceneEvent sceneEvent);
 ```
 
-##### Parameters
+## Parameters
 
 | Type       | Name         | Description |
 |------------|--------------|-------------|

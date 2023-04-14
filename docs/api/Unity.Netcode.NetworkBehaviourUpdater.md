@@ -1,9 +1,13 @@
----  
-id: Unity.Netcode.NetworkBehaviourUpdater  
-title: Unity.Netcode.NetworkBehaviourUpdater  
+---
+id: Unity.Netcode.NetworkBehaviourUpdater
+title: Unity.Netcode.NetworkBehaviourUpdater
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:15 pm
 ---
 
 <div class="markdown level0 summary">
+
+An helper class that helps NetworkManager update NetworkBehaviours and replicate them down to connected clients.
 
 </div>
 
@@ -13,7 +17,7 @@ title: Unity.Netcode.NetworkBehaviourUpdater
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -31,7 +35,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -42,6 +52,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -63,25 +79,13 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public class NetworkBehaviourUpdater

@@ -1,12 +1,16 @@
----  
-id: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnUnloadCompleteDelegateHandler
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:40:34 pm
 ---
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnUnloadComplete event.  
-See also:  
+Delegate declaration for the OnUnloadComplete event.
+
+See also:
+
 UnloadComplete for more information
 
 </div>
@@ -15,17 +19,17 @@ UnloadComplete for more information
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate void OnUnloadCompleteDelegateHandler(ulong clientId, string sceneName);
 ```
 
-##### Parameters
+## Parameters
 
 | Type          | Name        | Description                                                                                                        |
 |---------------|-------------|--------------------------------------------------------------------------------------------------------------------|

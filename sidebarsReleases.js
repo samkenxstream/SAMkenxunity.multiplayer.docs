@@ -16,23 +16,30 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
-                            id: 'netcode/1.0.0',
+                            id: 'netcode/ngo-changelog',
                         },
-                        {
-                            type: 'doc',
-                            id: 'netcode/0-1-0',
-                        },
-
                     ]
                 },
                 {
                     "collapsed": true,
                     "type": "category",
-                    "label": "Netcode Tools",
+                    "label": "Multiplayer Tools",
                     "items": [
+                        {
+                            type: "doc",
+                            id: "tools/tools-1-1-0",
+                        },
+                        {
+                            type: "doc",
+                            id: "tools/tools-1-0-0",
+                        },
                         {
                             type: 'doc',
                             id: 'tools/tools-1-0-0-pre',
+                        },
+                        {
+                            type: 'doc',
+                            id: 'tools/mppm-release-notes',
                         },
                     ]
                 },
@@ -43,23 +50,7 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
-                            id: 'samples/samples-1-2-0-pre',
-                        },
-                        {
-                            type: 'doc',
-                            id: 'samples/samples-1-1-0-pre',
-                        },
-                        {
-                            type: 'doc',
-                            id: 'samples/samples-1-0-0-pre',
-                        },
-                        {
-                            type: 'doc',
-                            id: 'samples/samples-0-2-0',
-                        },
-                        {
-                            type: 'doc',
-                            id: 'samples/samples-0-1-0',
+                            id: 'samples/bossroom-changelog',
                         },
                     ]
                 },
@@ -74,7 +65,15 @@ module.exports = {
                     "items": [
                         {
                             type: 'doc',
+                            id: 'transport/transport-2-0-0',
+                        },
+                        {
+                            type: 'doc',
                             id: 'transport/transport-1-0-0',
+                        },
+                        {
+                            type: 'doc',
+                            id: 'transport/transport-1-0-0-pre',
                         },
                         {
                             type: 'doc',

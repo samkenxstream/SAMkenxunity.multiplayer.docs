@@ -1,12 +1,14 @@
----  
-id: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.OnLoadDelegateHandler
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:08 pm
 ---
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the OnLoad event.  
-See also:  
+Delegate declaration for the OnLoad event.
+See also:
 Loadfor more information
 
 </div>
@@ -15,17 +17,17 @@ Loadfor more information
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate void OnLoadDelegateHandler(ulong clientId, string sceneName, LoadSceneMode loadSceneMode, AsyncOperation asyncOperation);
 ```
 
-##### Parameters
+## Parameters
 
 | Type           | Name             | Description                                                                                                        |
 |----------------|------------------|--------------------------------------------------------------------------------------------------------------------|

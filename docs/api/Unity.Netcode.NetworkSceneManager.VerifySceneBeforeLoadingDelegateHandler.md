@@ -1,14 +1,13 @@
----  
-id: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler  
-title: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler  
+---
+id: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+title: Unity.Netcode.NetworkSceneManager.VerifySceneBeforeLoadingDelegateHandler
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:22 pm
 ---
 
 <div class="markdown level0 summary">
 
-Delegate declaration for the VerifySceneBeforeLoading handler that
-provides an additional level of scene loading security and/or validation
-to assure the scene being loaded is valid scene to be loaded in the
-LoadSceneMode specified.
+Delegate declaration for the VerifySceneBeforeLoading handler that provides an additional level of scene loading security and/or validation to assure the scene being loaded is valid scene to be loaded in the LoadSceneMode specified.
 
 </div>
 
@@ -16,17 +15,17 @@ LoadSceneMode specified.
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public delegate bool VerifySceneBeforeLoadingDelegateHandler(int sceneIndex, string sceneName, LoadSceneMode loadSceneMode);
 ```
 
-##### Parameters
+## Parameters
 
 | Type          | Name            | Description                                            |
 |---------------|-----------------|--------------------------------------------------------|
@@ -34,7 +33,7 @@ public delegate bool VerifySceneBeforeLoadingDelegateHandler(int sceneIndex, str
 | System.String | \*sceneName     | Name of the scene                                      |
 | LoadSceneMode | \*loadSceneMode | LoadSceneMode the scene is going to be loaded          |
 
-##### Returns
+## Returns
 
 | Type           | Description                       |
 |----------------|-----------------------------------|

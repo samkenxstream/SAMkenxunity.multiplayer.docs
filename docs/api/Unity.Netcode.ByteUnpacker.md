@@ -1,9 +1,13 @@
----  
-id: Unity.Netcode.ByteUnpacker  
-title: Unity.Netcode.ByteUnpacker  
+---
+id: Unity.Netcode.ByteUnpacker
+title: Unity.Netcode.ByteUnpacker
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:10 pm
 ---
 
 <div class="markdown level0 summary">
+
+Byte Unpacking Helper Class Use this class to unpack values during deserialization for values that were packed. BytePacker to pack unpacked values
 
 </div>
 
@@ -13,7 +17,7 @@ title: Unity.Netcode.ByteUnpacker
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -31,7 +35,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -42,6 +52,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -63,37 +79,26 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public static class ByteUnpacker
 ```
 
-## 
+## Methods
 
-### ReadValueBitPacked(FastBufferReader, out Int16)
+### ReadValueBitPacked(FastBufferReader, Out Int16)
 
 <div class="markdown level1 summary">
 
 Read a bit-packed 14-bit signed short from the stream. See BytePacker.cs
+
 for a description of the format.
 
 </div>
@@ -115,11 +120,12 @@ public static void ReadValueBitPacked(FastBufferReader reader, out short value)
 | FastBufferReader | reader | The reader to read from |
 | System.Int16     | value  | The value to read       |
 
-### ReadValueBitPacked(FastBufferReader, out Int32)
+### ReadValueBitPacked(FastBufferReader, Out Int32)
 
 <div class="markdown level1 summary">
 
 Read a bit-packed 29-bit signed int from the stream. See BytePacker.cs
+
 for a description of the format.
 
 </div>
@@ -141,11 +147,12 @@ public static void ReadValueBitPacked(FastBufferReader reader, out int value)
 | FastBufferReader | reader | The reader to read from |
 | System.Int32     | value  | The value to read       |
 
-### ReadValueBitPacked(FastBufferReader, out Int64)
+### ReadValueBitPacked(FastBufferReader, Out Int64)
 
 <div class="markdown level1 summary">
 
 Read a bit-packed 60-bit signed long from the stream. See BytePacker.cs
+
 for a description of the format.
 
 </div>
@@ -167,11 +174,12 @@ public static void ReadValueBitPacked(FastBufferReader reader, out long value)
 | FastBufferReader | reader | The reader to read from |
 | System.Int64     | value  | The value to read       |
 
-### ReadValueBitPacked(FastBufferReader, out UInt16)
+### ReadValueBitPacked(FastBufferReader, Out UInt16)
 
 <div class="markdown level1 summary">
 
 Read a bit-packed 15-bit unsigned short from the stream. See
+
 BytePacker.cs for a description of the format.
 
 </div>
@@ -193,11 +201,12 @@ public static void ReadValueBitPacked(FastBufferReader reader, out ushort value)
 | FastBufferReader | reader | The reader to read from |
 | System.UInt16    | value  | The value to read       |
 
-### ReadValueBitPacked(FastBufferReader, out UInt32)
+### ReadValueBitPacked(FastBufferReader, Out UInt32)
 
 <div class="markdown level1 summary">
 
 Read a bit-packed 30-bit unsigned int from the stream. See BytePacker.cs
+
 for a description of the format.
 
 </div>
@@ -219,11 +228,12 @@ public static void ReadValueBitPacked(FastBufferReader reader, out uint value)
 | FastBufferReader | reader | The reader to read from |
 | System.UInt32    | value  | The value to read       |
 
-### ReadValueBitPacked(FastBufferReader, out UInt64)
+### ReadValueBitPacked(FastBufferReader, Out UInt64)
 
 <div class="markdown level1 summary">
 
 Read a bit-packed 61-bit signed long from the stream. See BytePacker.cs
+
 for a description of the format.
 
 </div>
@@ -245,11 +255,12 @@ public static void ReadValueBitPacked(FastBufferReader reader, out ulong value)
 | FastBufferReader | reader | The reader to read from |
 | System.UInt64    | value  | The value to read       |
 
-### ReadValuePacked(FastBufferReader, out Color)
+### ReadValuePacked(FastBufferReader, Out Color)
 
 <div class="markdown level1 summary">
 
 Convenience method that reads four varint floats from the color from the
+
 stream
 
 </div>
@@ -271,11 +282,12 @@ public static void ReadValuePacked(FastBufferReader reader, out Color color)
 | FastBufferReader | reader | The reader to read from |
 | Color            | color  | Color to read           |
 
-### ReadValuePacked(FastBufferReader, out Color32)
+### ReadValuePacked(FastBufferReader, Out Color32)
 
 <div class="markdown level1 summary">
 
 Convenience method that reads four varint floats from the color from the
+
 stream
 
 </div>
@@ -297,7 +309,7 @@ public static void ReadValuePacked(FastBufferReader reader, out Color32 color)
 | FastBufferReader | reader | The reader to read from |
 | Color32          | color  | Color to read           |
 
-### ReadValuePacked(FastBufferReader, out Quaternion)
+### ReadValuePacked(FastBufferReader, Out Quaternion)
 
 <div class="markdown level1 summary">
 
@@ -322,11 +334,12 @@ public static void ReadValuePacked(FastBufferReader reader, out Quaternion rotat
 | FastBufferReader | reader   | The reader to read from |
 | Quaternion       | rotation | Rotation to read        |
 
-### ReadValuePacked(FastBufferReader, out Ray)
+### ReadValuePacked(FastBufferReader, Out Ray)
 
 <div class="markdown level1 summary">
 
 Convenience method that reads two packed Vector3 from the ray from the
+
 stream
 
 </div>
@@ -348,11 +361,12 @@ public static void ReadValuePacked(FastBufferReader reader, out Ray ray)
 | FastBufferReader | reader | The reader to read from |
 | Ray              | ray    | Ray to read             |
 
-### ReadValuePacked(FastBufferReader, out Ray2D)
+### ReadValuePacked(FastBufferReader, Out Ray2D)
 
 <div class="markdown level1 summary">
 
 Convenience method that reads two packed Vector2 from the ray from the
+
 stream
 
 </div>
@@ -374,7 +388,7 @@ public static void ReadValuePacked(FastBufferReader reader, out Ray2D ray2d)
 | FastBufferReader | reader | The reader to read from |
 | Ray2D            | ray2d  | Ray2D to read           |
 
-### ReadValuePacked(FastBufferReader, out Boolean)
+### ReadValuePacked(FastBufferReader, Out Boolean)
 
 <div class="markdown level1 summary">
 
@@ -399,7 +413,7 @@ public static void ReadValuePacked(FastBufferReader reader, out bool value)
 | FastBufferReader | reader | The reader to read from |
 | System.Boolean   | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Byte)
+### ReadValuePacked(FastBufferReader, Out Byte)
 
 <div class="markdown level1 summary">
 
@@ -424,7 +438,7 @@ public static void ReadValuePacked(FastBufferReader reader, out byte value)
 | FastBufferReader | reader | The reader to read from |
 | System.Byte      | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Char)
+### ReadValuePacked(FastBufferReader, Out Char)
 
 <div class="markdown level1 summary">
 
@@ -449,7 +463,7 @@ public static void ReadValuePacked(FastBufferReader reader, out char c)
 | FastBufferReader | reader | The reader to read from |
 | System.Char      | c      | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Double)
+### ReadValuePacked(FastBufferReader, Out Double)
 
 <div class="markdown level1 summary">
 
@@ -474,7 +488,7 @@ public static void ReadValuePacked(FastBufferReader reader, out double value)
 | FastBufferReader | reader | The reader to read from |
 | System.Double    | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Int16)
+### ReadValuePacked(FastBufferReader, Out Int16)
 
 <div class="markdown level1 summary">
 
@@ -499,7 +513,7 @@ public static void ReadValuePacked(FastBufferReader reader, out short value)
 | FastBufferReader | reader | The reader to read from |
 | System.Int16     | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Int32)
+### ReadValuePacked(FastBufferReader, Out Int32)
 
 <div class="markdown level1 summary">
 
@@ -524,7 +538,7 @@ public static void ReadValuePacked(FastBufferReader reader, out int value)
 | FastBufferReader | reader | The reader to read from |
 | System.Int32     | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Int64)
+### ReadValuePacked(FastBufferReader, Out Int64)
 
 <div class="markdown level1 summary">
 
@@ -549,7 +563,7 @@ public static void ReadValuePacked(FastBufferReader reader, out long value)
 | FastBufferReader | reader | The reader to read from |
 | System.Int64     | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out SByte)
+### ReadValuePacked(FastBufferReader, Out SByte)
 
 <div class="markdown level1 summary">
 
@@ -574,7 +588,7 @@ public static void ReadValuePacked(FastBufferReader reader, out sbyte value)
 | FastBufferReader | reader | The reader to read from |
 | System.SByte     | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Single)
+### ReadValuePacked(FastBufferReader, Out Single)
 
 <div class="markdown level1 summary">
 
@@ -599,7 +613,7 @@ public static void ReadValuePacked(FastBufferReader reader, out float value)
 | FastBufferReader | reader | The reader to read from |
 | System.Single    | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out String)
+### ReadValuePacked(FastBufferReader, Out String)
 
 <div class="markdown level1 summary">
 
@@ -624,7 +638,7 @@ public static void ReadValuePacked(FastBufferReader reader, out string s)
 | FastBufferReader | reader | The reader to read from |
 | System.String    | s      |                         |
 
-### ReadValuePacked(FastBufferReader, out UInt16)
+### ReadValuePacked(FastBufferReader, Out UInt16)
 
 <div class="markdown level1 summary">
 
@@ -649,7 +663,7 @@ public static void ReadValuePacked(FastBufferReader reader, out ushort value)
 | FastBufferReader | reader | The reader to read from |
 | System.UInt16    | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out UInt32)
+### ReadValuePacked(FastBufferReader, Out UInt32)
 
 <div class="markdown level1 summary">
 
@@ -674,7 +688,7 @@ public static void ReadValuePacked(FastBufferReader reader, out uint value)
 | FastBufferReader | reader | The reader to read from |
 | System.UInt32    | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out UInt64)
+### ReadValuePacked(FastBufferReader, Out UInt64)
 
 <div class="markdown level1 summary">
 
@@ -699,11 +713,12 @@ public static void ReadValuePacked(FastBufferReader reader, out ulong value)
 | FastBufferReader | reader | The reader to read from |
 | System.UInt64    | value  | Value to read           |
 
-### ReadValuePacked(FastBufferReader, out Vector2)
+### ReadValuePacked(FastBufferReader, Out Vector2)
 
 <div class="markdown level1 summary">
 
 Convenience method that reads two varint floats from the vector from the
+
 stream
 
 </div>
@@ -725,11 +740,12 @@ public static void ReadValuePacked(FastBufferReader reader, out Vector2 vector2)
 | FastBufferReader | reader  | The reader to read from |
 | Vector2          | vector2 | Vector to read          |
 
-### ReadValuePacked(FastBufferReader, out Vector3)
+### ReadValuePacked(FastBufferReader, Out Vector3)
 
 <div class="markdown level1 summary">
 
 Convenience method that reads three varint floats from the vector from
+
 the stream
 
 </div>
@@ -751,11 +767,12 @@ public static void ReadValuePacked(FastBufferReader reader, out Vector3 vector3)
 | FastBufferReader | reader  | The reader to read from |
 | Vector3          | vector3 | Vector to read          |
 
-### ReadValuePacked(FastBufferReader, out Vector4)
+### ReadValuePacked(FastBufferReader, Out Vector4)
 
 <div class="markdown level1 summary">
 
 Convenience method that reads four varint floats from the vector from
+
 the stream
 
 </div>
@@ -777,9 +794,11 @@ public static void ReadValuePacked(FastBufferReader reader, out Vector4 vector4)
 | FastBufferReader | reader  | The reader to read from |
 | Vector4          | vector4 | Vector to read          |
 
-### ReadValuePacked\&lt;TEnum&gt;(FastBufferReader, out TEnum)
+### ReadValuePacked\<TEnum\>(FastBufferReader, Out TEnum)
 
 <div class="markdown level1 summary">
+
+Read a packed enum value
 
 </div>
 
@@ -791,18 +810,25 @@ public static void ReadValuePacked(FastBufferReader reader, out Vector4 vector4)
 
 ``` lang-csharp
 public static void ReadValuePacked<TEnum>(FastBufferReader reader, out TEnum value)
+
     where TEnum : struct, Enum
 ```
 
 #### Parameters
 
-| Type             | Name   | Description |
-|------------------|--------|-------------|
-| FastBufferReader | reader |             |
-| TEnum            | value  |             |
+| Type             | Name   | Description             |
+|------------------|--------|-------------------------|
+| FastBufferReader | reader | The reader to read from |
+| TEnum            | value  | The value that's read   |
 
 #### Type Parameters
 
-| Name  | Description |
-|-------|-------------|
-| TEnum |             |
+| Name  | Description          |
+|-------|----------------------|
+| TEnum | Type of enum to read |
+
+#### Exceptions
+
+| Type                             | Condition                                                                                                                                  |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| System.InvalidOperationException | Throws InvalidOperationException if an enum somehow ends up not being the size of a byte, short, int, or long (which should be impossible) |

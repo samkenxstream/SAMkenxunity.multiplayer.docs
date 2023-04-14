@@ -1,11 +1,13 @@
----  
-id: Unity.Netcode.BytePacker  
-title: Unity.Netcode.BytePacker  
+---
+id: Unity.Netcode.BytePacker
+title: Unity.Netcode.BytePacker
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:34:06 pm
 ---
 
 <div class="markdown level0 summary">
 
-Utility class for packing values in serialization.
+Utility class for packing values in serialization. ByteUnpacker to unpack packed values.
 
 </div>
 
@@ -15,7 +17,7 @@ Utility class for packing values in serialization.
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -33,7 +35,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -44,6 +52,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -65,43 +79,257 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public static class BytePacker
 ```
 
-## 
+## Fields
+
+### BitPackedIntMax
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int BitPackedIntMax = 536870911
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### BitPackedIntMin
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const int BitPackedIntMin = -536870912
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int32 |             |
+
+### BitPackedLongMax
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const long BitPackedLongMax = 1152921504606846975L
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
+
+### BitPackedLongMin
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const long BitPackedLongMin = -1152921504606846976L
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int64 |             |
+
+### BitPackedShortMax
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const short BitPackedShortMax = 16383
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int16 |             |
+
+### BitPackedShortMin
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const short BitPackedShortMin = -16384
+```
+
+#### Field Value
+
+| Type         | Description |
+|--------------|-------------|
+| System.Int16 |             |
+
+### BitPackedUintMax
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const uint BitPackedUintMax = 1073741823U
+```
+
+#### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt32 |             |
+
+### BitPackedULongMax
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const ulong BitPackedULongMax = 2305843009213693951UL
+```
+
+#### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt64 |             |
+
+### BitPackedUshortMax
+
+<div class="markdown level1 summary">
+
+Obsolete value that no longer carries meaning. Do not use.
+
+</div>
+
+<div class="markdown level1 conceptual">
+
+</div>
+
+#### Declaration
+
+``` lang-csharp
+public const ushort BitPackedUshortMax = 32767
+```
+
+#### Field Value
+
+| Type          | Description |
+|---------------|-------------|
+| System.UInt16 |             |
+
+## Methods
 
 ### WriteValueBitPacked(FastBufferWriter, Int16)
 
 <div class="markdown level1 summary">
 
-Writes a 14-bit signed short to the buffer in a bit-encoded packed
-format. The first bit indicates whether the value is 1 byte or 2. The
-sign bit takes up another bit. That leaves 14 bits for the value. A
-value greater than 2^14-1 or less than -2^14 will throw an exception in
-editor and development builds. In release builds builds the exception is
-not thrown and the value is truncated by losing its two most significant
-bits after zig-zag encoding.
+Writes a 16-bit signed short to the buffer in a bit-encoded packed
+
+format. Zig-zag encoding is used to move the sign bit to the least
+
+significant bit, so that negative values are still able to be
+
+compressed. The first two bits indicate whether the value is 1, 2, or 3
+
+bytes. If the value uses 14 bits or less, the remaining 14 bits contain
+
+the value. For performance, reasons, if the value is 15 bits or more,
+
+there will be six 0 bits, followed by the original unmodified 16-bit
+
+value in the next 2 bytes.
 
 </div>
 
@@ -126,13 +354,21 @@ public static void WriteValueBitPacked(FastBufferWriter writer, short value)
 
 <div class="markdown level1 summary">
 
-Writes a 29-bit signed int to the buffer in a bit-encoded packed format.
-The first two bits indicate whether the value is 1, 2, 3, or 4 bytes.
-The sign bit takes up another bit. That leaves 29 bits for the value. A
-value greater than 2^29-1 or less than -2^29 will throw an exception in
-editor and development builds. In release builds builds the exception is
-not thrown and the value is truncated by losing its three most
-significant bits after zig-zag encoding.
+Writes a 32-bit signed int to the buffer in a bit-encoded packed format.
+
+Zig-zag encoding is used to move the sign bit to the least significant
+
+bit, so that negative values are still able to be compressed. The first
+
+three bits indicate whether the value is 1, 2, 3, 4, or 5 bytes. If the
+
+value uses 29 bits or less, the remaining 29 bits contain the value. For
+
+performance, reasons, if the value is 30 bits or more, there will be
+
+five 0 bits, followed by the original unmodified 32-bit value in the
+
+next 4 bytes.
 
 </div>
 
@@ -157,13 +393,21 @@ public static void WriteValueBitPacked(FastBufferWriter writer, int value)
 
 <div class="markdown level1 summary">
 
-Writes a 60-bit signed long to the buffer in a bit-encoded packed
-format. The first three bits indicate whether the value is 1, 2, 3, 4,
-5, 6, 7, or 8 bytes. The sign bit takes up another bit. That leaves 60
-bits for the value. A value greater than 2^60-1 or less than -2^60 will
-throw an exception in editor and development builds. In release builds
-builds the exception is not thrown and the value is truncated by losing
-its four most significant bits after zig-zag encoding.
+Writes a 64-bit signed long to the buffer in a bit-encoded packed
+
+format. Zig-zag encoding is used to move the sign bit to the least
+
+significant bit, so that negative values are still able to be
+
+compressed. The first four bits indicate whether the value is 1, 2, 3,
+
+4, 5, 6, 7, 8, or 9 bytes. If the value uses 60 bits or less, the
+
+remaining 60 bits contain the value. For performance, reasons, if the
+
+value is 61 bits or more, there will be four 0 bits, followed by the
+
+original unmodified 64-bit value in the next 8 bytes.
 
 </div>
 
@@ -188,12 +432,17 @@ public static void WriteValueBitPacked(FastBufferWriter writer, long value)
 
 <div class="markdown level1 summary">
 
-Writes a 15-bit unsigned short to the buffer in a bit-encoded packed
-format. The first bit indicates whether the value is 1 byte or 2. That
-leaves 15 bits for the value. A value greater than 2^15-1 will throw an
-exception in editor and development builds. In release builds builds the
-exception is not thrown and the value is truncated by losing its most
-significant bit.
+Writes a 16-bit unsigned short to the buffer in a bit-encoded packed
+
+format. The first two bits indicate whether the value is 1, 2, or 3
+
+bytes. If the value uses 14 bits or less, the remaining 14 bits contain
+
+the value. For performance, reasons, if the value is 15 bits or more,
+
+there will be six 0 bits, followed by the original unmodified 16-bit
+
+value in the next 2 bytes.
 
 </div>
 
@@ -218,12 +467,17 @@ public static void WriteValueBitPacked(FastBufferWriter writer, ushort value)
 
 <div class="markdown level1 summary">
 
-Writes a 30-bit unsigned int to the buffer in a bit-encoded packed
-format. The first two bits indicate whether the value is 1, 2, 3, or 4
-bytes. That leaves 30 bits for the value. A value greater than 2^30-1
-will throw an exception in editor and development builds. In release
-builds builds the exception is not thrown and the value is truncated by
-losing its two most significant bits.
+Writes a 32-bit unsigned int to the buffer in a bit-encoded packed
+
+format. The first three bits indicate whether the value is 1, 2, 3, 4,
+
+or 5 bytes. If the value uses 29 bits or less, the remaining 29 bits
+
+contain the value. For performance, reasons, if the value is 30 bits or
+
+more, there will be five 0 bits, followed by the original unmodified
+
+32-bit value in the next 4 bytes.
 
 </div>
 
@@ -248,12 +502,17 @@ public static void WriteValueBitPacked(FastBufferWriter writer, uint value)
 
 <div class="markdown level1 summary">
 
-Writes a 61-bit unsigned long to the buffer in a bit-encoded packed
-format. The first three bits indicate whether the value is 1, 2, 3, 4,
-5, 6, 7, or 8 bytes. That leaves 31 bits for the value. A value greater
-than 2^61-1 will throw an exception in editor and development builds. In
-release builds builds the exception is not thrown and the value is
-truncated by losing its three most significant bits.
+Writes a 64-bit unsigned long to the buffer in a bit-encoded packed
+
+format. The first four bits indicate whether the value is 1, 2, 3, 4, 5,
+
+6, 7, 8, or 9 bytes. If the value uses 60 bits or less, the remaining 60
+
+bits contain the value. For performance, reasons, if the value is 61
+
+bits or more, there will be four 0 bits, followed by the original
+
+unmodified 64-bit value in the next 8 bytes.
 
 </div>
 
@@ -279,6 +538,7 @@ public static void WriteValueBitPacked(FastBufferWriter writer, ulong value)
 <div class="markdown level1 summary">
 
 Convenience method that writes four varint floats from the color to the
+
 buffer
 
 </div>
@@ -305,6 +565,7 @@ public static void WriteValuePacked(FastBufferWriter writer, Color color)
 <div class="markdown level1 summary">
 
 Convenience method that writes four varint floats from the color to the
+
 buffer
 
 </div>
@@ -356,6 +617,7 @@ public static void WriteValuePacked(FastBufferWriter writer, Quaternion rotation
 <div class="markdown level1 summary">
 
 Convenience method that writes two packed Vector3 from the ray to the
+
 buffer
 
 </div>
@@ -382,6 +644,7 @@ public static void WriteValuePacked(FastBufferWriter writer, Ray ray)
 <div class="markdown level1 summary">
 
 Convenience method that writes two packed Vector2 from the ray to the
+
 buffer
 
 </div>
@@ -458,8 +721,11 @@ public static void WriteValuePacked(FastBufferWriter writer, byte value)
 <div class="markdown level1 summary">
 
 Write a two-byte character as a varint to the buffer. WARNING: If the
+
 value you're writing is \> 2287, this will use MORE space (3 bytes
+
 instead of 2), and if your value is \> 240 you'll get no savings at all.
+
 Only use this if you're certain your value will be small.
 
 </div>
@@ -511,9 +777,13 @@ public static void WriteValuePacked(FastBufferWriter writer, double value)
 <div class="markdown level1 summary">
 
 Write a signed short (Int16) as a ZigZag encoded varint to the buffer.
+
 WARNING: If the value you're writing is \> 2287, this will use MORE
+
 space (3 bytes instead of 2), and if your value is \> 240 you'll get no
+
 savings at all. Only use this if you're certain your value will be
+
 small.
 
 </div>
@@ -665,8 +935,11 @@ public static void WriteValuePacked(FastBufferWriter writer, string s)
 <div class="markdown level1 summary">
 
 Write an unsigned short (UInt16) as a varint to the buffer. WARNING: If
+
 the value you're writing is \> 2287, this will use MORE space (3 bytes
+
 instead of 2), and if your value is \> 240 you'll get no savings at all.
+
 Only use this if you're certain your value will be small.
 
 </div>
@@ -743,6 +1016,7 @@ public static void WriteValuePacked(FastBufferWriter writer, ulong value)
 <div class="markdown level1 summary">
 
 Convenience method that writes two varint floats from the vector to the
+
 buffer
 
 </div>
@@ -769,6 +1043,7 @@ public static void WriteValuePacked(FastBufferWriter writer, Vector2 vector2)
 <div class="markdown level1 summary">
 
 Convenience method that writes three varint floats from the vector to
+
 the buffer
 
 </div>
@@ -795,6 +1070,7 @@ public static void WriteValuePacked(FastBufferWriter writer, Vector3 vector3)
 <div class="markdown level1 summary">
 
 Convenience method that writes four varint floats from the vector to the
+
 buffer
 
 </div>
@@ -816,7 +1092,7 @@ public static void WriteValuePacked(FastBufferWriter writer, Vector4 vector4)
 | FastBufferWriter | writer  | The writer to write to |
 | Vector4          | vector4 | Vector to write        |
 
-### WriteValuePacked\&lt;TEnum&gt;(FastBufferWriter, TEnum)
+### WriteValuePacked\<TEnum\>(FastBufferWriter, TEnum)
 
 <div class="markdown level1 summary">
 
@@ -832,6 +1108,7 @@ Write a packed enum value.
 
 ``` lang-csharp
 public static void WriteValuePacked<TEnum>(FastBufferWriter writer, TEnum value)
+
     where TEnum : struct, Enum
 ```
 

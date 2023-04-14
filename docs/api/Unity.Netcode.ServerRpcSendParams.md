@@ -1,9 +1,13 @@
----  
-id: Unity.Netcode.ServerRpcSendParams  
-title: Unity.Netcode.ServerRpcSendParams  
+---
+id: Unity.Netcode.ServerRpcSendParams
+title: Unity.Netcode.ServerRpcSendParams
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:38:21 pm
 ---
 
 <div class="markdown level0 summary">
+
+Server-Side RPC Place holder. ServerRpcParams Note: Clients always send to one destination when sending RPCs to the server so this structure is a place holder
 
 </div>
 
@@ -13,7 +17,7 @@ title: Unity.Netcode.ServerRpcSendParams
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -41,23 +45,23 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public struct ServerRpcSendParams

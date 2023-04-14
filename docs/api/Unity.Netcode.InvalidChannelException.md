@@ -1,9 +1,13 @@
----  
-id: Unity.Netcode.InvalidChannelException  
-title: Unity.Netcode.InvalidChannelException  
+---
+id: Unity.Netcode.InvalidChannelException
+title: Unity.Netcode.InvalidChannelException
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:05 pm
 ---
 
 <div class="markdown level0 summary">
+
+Exception thrown when a specified network channel is invalid
 
 </div>
 
@@ -13,7 +17,7 @@ title: Unity.Netcode.InvalidChannelException
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -37,13 +41,7 @@ System.Dynamic.ExpandoObject
 
 <div classs="implements">
 
-##### Implements
-
-<div>
-
-System.Runtime.InteropServices.\_Exception
-
-</div>
+## Implements
 
 <div>
 
@@ -51,15 +49,27 @@ System.Runtime.Serialization.ISerializable
 
 </div>
 
+<div>
+
+System.Runtime.InteropServices.\_Exception
+
+</div>
+
 </div>
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
 Exception.GetBaseException()
+
+</div>
+
+<div>
+
+Exception.ToString()
 
 </div>
 
@@ -77,7 +87,7 @@ Exception.GetType()
 
 <div>
 
-Exception.ToString()
+Exception.Message
 
 </div>
 
@@ -89,31 +99,13 @@ Exception.Data
 
 <div>
 
-Exception.HelpLink
-
-</div>
-
-<div>
-
-Exception.HResult
-
-</div>
-
-<div>
-
 Exception.InnerException
 
 </div>
 
 <div>
 
-Exception.Message
-
-</div>
-
-<div>
-
-Exception.Source
+Exception.TargetSite
 
 </div>
 
@@ -125,7 +117,19 @@ Exception.StackTrace
 
 <div>
 
-Exception.TargetSite
+Exception.HelpLink
+
+</div>
+
+<div>
+
+Exception.Source
+
+</div>
+
+<div>
+
+Exception.HResult
 
 </div>
 
@@ -143,6 +147,12 @@ Object.Equals(Object, Object)
 
 <div>
 
+Object.ReferenceEquals(Object, Object)
+
+</div>
+
+<div>
+
 Object.GetHashCode()
 
 </div>
@@ -153,29 +163,25 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-</div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Assembly**: Netcode.dll
 
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
-public class InvalidChannelException : Exception, _Exception, ISerializable
+public class InvalidChannelException : Exception, ISerializable, _Exception
 ```
 
-## 
+## Constructors
 
 ### InvalidChannelException(String)
 
 <div class="markdown level1 summary">
+
+Constructs an InvalidChannelException with a message
 
 </div>
 
@@ -193,18 +199,18 @@ public InvalidChannelException(string message)
 
 | Type          | Name    | Description |
 |---------------|---------|-------------|
-| System.String | message |             |
+| System.String | message | the message |
 
 ### Implements
 
 <div>
 
-System.Runtime.InteropServices.\_Exception
+System.Runtime.Serialization.ISerializable
 
 </div>
 
 <div>
 
-System.Runtime.Serialization.ISerializable
+System.Runtime.InteropServices.\_Exception
 
 </div>

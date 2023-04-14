@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.LogLevel  
-title: Unity.Netcode.LogLevel  
+---
+id: Unity.Netcode.LogLevel
+title: Unity.Netcode.LogLevel
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:10 pm
 ---
 
 <div class="markdown level0 summary">
@@ -13,17 +15,17 @@ Log level
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public enum LogLevel
 ```
 
-## 
+## Fields
 
 | Name      | Description                                    |
 |-----------|------------------------------------------------|

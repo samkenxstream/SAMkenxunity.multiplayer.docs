@@ -1,12 +1,13 @@
----  
-id: Unity.Netcode.PendingClient  
-title: Unity.Netcode.PendingClient  
+---
+id: Unity.Netcode.PendingClient
+title: Unity.Netcode.PendingClient
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:36:53 pm
 ---
 
 <div class="markdown level0 summary">
 
-A class representing a client that is currently in the process of
-connecting
+A class representing a client that is currently in the process of connecting
 
 </div>
 
@@ -16,7 +17,7 @@ connecting
 
 <div class="inheritance">
 
-##### Inheritance
+## Inheritance
 
 <div class="level0">
 
@@ -34,7 +35,13 @@ System.Dynamic.ExpandoObject
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
+
+<div>
+
+Object.ToString()
+
+</div>
 
 <div>
 
@@ -45,6 +52,12 @@ Object.Equals(Object)
 <div>
 
 Object.Equals(Object, Object)
+
+</div>
+
+<div>
+
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
@@ -66,31 +79,19 @@ Object.MemberwiseClone()
 
 </div>
 
-<div>
-
-Object.ReferenceEquals(Object, Object)
-
 </div>
 
-<div>
+## **Namespace**: System.Dynamic.ExpandoObject
 
-Object.ToString()
+## **Assembly**: Netcode.dll
 
-</div>
-
-</div>
-
-##### **Namespace**: System.Dynamic.ExpandoObject
-
-##### **Assembly**: MLAPI.dll
-
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public class PendingClient
 ```
 
-## 
+## Properties
 
 ### ClientId
 

@@ -1,6 +1,8 @@
----  
-id: Unity.Netcode.NetworkListEvent-1  
-title: Unity.Netcode.NetworkListEvent-1  
+---
+id: Unity.Netcode.NetworkListEvent-1
+title: Unity.Netcode.NetworkListEvent-1
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:41:06 pm
 ---
 
 <div class="markdown level0 summary">
@@ -15,7 +17,7 @@ Struct containing event information about changes to a NetworkList.
 
 <div class="inheritedMembers">
 
-##### Inherited Members
+## Inherited Members
 
 <div>
 
@@ -43,35 +45,35 @@ Object.Equals(Object, Object)
 
 <div>
 
-Object.GetType()
+Object.ReferenceEquals(Object, Object)
 
 </div>
 
 <div>
 
-Object.ReferenceEquals(Object, Object)
+Object.GetType()
 
 </div>
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public struct NetworkListEvent<T>
 ```
 
-##### Type Parameters
+## Type Parameters
 
 | Name | Description                                   |
 |------|-----------------------------------------------|
 | T    | The type for the list that the event is about |
 
-## 
+## Fields
 
 ### Index
 

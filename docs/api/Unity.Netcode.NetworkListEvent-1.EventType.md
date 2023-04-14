@@ -1,12 +1,13 @@
----  
-id: Unity.Netcode.NetworkListEvent-1.EventType  
-title: Unity.Netcode.NetworkListEvent-1.EventType  
+---
+id: Unity.Netcode.NetworkListEvent-1.EventType
+title: Unity.Netcode.NetworkListEvent-1.EventType
+date created: Tuesday, October 11th 2022, 11:08:26 am
+date modified: Wednesday, January 25th 2023, 5:35:31 pm
 ---
 
 <div class="markdown level0 summary">
 
-Enum representing the different operations available for triggering an
-event.
+Enum representing the different operations available for triggering an event.
 
 </div>
 
@@ -14,17 +15,17 @@ event.
 
 </div>
 
-##### **Namespace**: System.Dynamic.ExpandoObject
+## **Namespace**: System.Dynamic.ExpandoObject
 
-##### **Assembly**: MLAPI.dll
+## **Assembly**: Netcode.dll
 
-##### Syntax
+## Syntax
 
 ``` lang-csharp
 public enum EventType : byte
 ```
 
-## 
+## Fields
 
 | Name     | Description       |
 |----------|-------------------|
